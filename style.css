@@ -1,8 +1,35 @@
-.compass-logo {
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff
+}
+.header-compass-logo {
   width: 179.1px;
   height: 24px;
+  padding-left: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   object-fit: contain;
 }
-.header {
-  background-color: #fff
+.header-navigation {
+  padding-right: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header-navigation-links {
+  margin-left: 32px;
+  font: "FiraSans", sans-serif;
+  font-size: 1rem;
+  color: #3e4247;
+  text-decoration: none;
+}
+.compass-dev {
+  height: 291px;
+  display: flex;
+  justify-content: center;
+  background-color: #161616
+
+}
+.Intro {
+
 }
