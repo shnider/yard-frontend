@@ -1,11 +1,10 @@
 html {
-  font-size: 16px;
   font-family: 'Fira Sans', sans-serif;
 }
 
 .main-background {
   background-image: url(images/background.png);
-  background-size: 20px 10px;
+  background-size: 1.25rem 0.625rem;
   background-color: #EAEBF0;
 
 }
@@ -15,32 +14,32 @@ html {
   background-color: #fff
 }
 .header-compass-logo {
-  width: 179.1px;
-  height: 24px;
-  padding-left: 120px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  width: 11.19375rem;
+  height: 1.5rem;
+  padding-left: 8rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   object-fit: contain;
 }
 .header-navigation {
-  padding-right: 120px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  line-height: 1rem;
+  padding-right: 8rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  line-height: 1.25rem;
 }
 .header-navigation-links {
-  margin-left: 32px;
+  margin-left: 2rem;
 
   font-size: 1rem;
   color: #3e4247;
   text-decoration: none;
 }
-.compass-dev {
-  height: 291px;
+.compass-dev-logo {
+  height: 18.1875rem;
   display: flex;
   justify-content: center;
   background-color: #161616;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 .introduction {
   display: flex;
