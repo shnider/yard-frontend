@@ -118,3 +118,67 @@ html {
   line-height: 1.5rem;
   color: #3e4247;
 }
+.main-footer {
+  margin-top: 6rem;
+  background-color: #000;
+}
+.footer-detalis-header {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #646971;
+}
+.footer-detalis {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #a9afb6;
+}
+.footer-detalis:last-child {
+  margin-top: 1rem;
+}
+.footer-line {
+  margin-top: 2rem;
+  border: 1px solid #3e4247;
+  background-color: #3e4247;
+}
+.footer-distr-header {
+  font-weight: bold;
+  color: #646971;
+}
+.footer-distr-nav {
+  display: flex;
+  flex-flow: column;
+}
+.footer-distr-nav :last-child {
+  margin-top: 1rem;
+}
+.footer-distr-link {
+  margin-top: 0.5rem;
+  text-decoration: none;
+  font-weight: 300;
+  color: #fff;
+}
+.footer-about-header {
+  font-weight: bold;
+  color: #646971;
+}
+.footer-about-nav {
+  display: flex;
+  flex-flow: column;
+}
+.footer-about-link {
+  margin-top: 0.5rem;
+  text-decoration: none;
+  font-weight: 300;
+  color: #fff;
+}
+.footer-credits {
+  margin-top: 8rem;
+  margin-bottom: 1.75rem;
+  margin-left: 1rem;
+  font-weight: 300;
+  font-size: 0.6875rem;
+  color: #a9afb6;
+}
