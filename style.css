@@ -78,7 +78,6 @@ html {
   padding-right: 1.9375rem;
   padding-top: 0.8125rem;
   padding-bottom: 0.8125rem;
-  font-family: 'Fira Sans',sans-serif;
   line-height: 1rem;
   color: #fff;
 }
@@ -106,7 +105,7 @@ html {
 .card-content {
   display:flex;
   flex-flow: column;
-  padding: 1.5rem 0 0 1.019rem;
+  padding: 1.5rem 2rem;
 }
 
 .card-content :first-child {
@@ -131,7 +130,6 @@ html {
 }
 
 .card-text {
-  padding-right: 6.29375rem;
   line-height: 1.5rem;
   color: #3e4247;
 }
@@ -167,7 +165,7 @@ html {
   background-color: #3e4247;
 }
 
-.footer-distr-header {
+.footer-resident-complex-header {
   margin-top: 1rem;
   margin-bottom: 0rem;
   font-size: 0.875rem;
@@ -175,17 +173,16 @@ html {
   color: #646971;
 }
 
-.footer-distr-nav {
-  display: flex;
-  flex-flow: column;
+.footer-resident-complex-nav {
   font-size: 0.875rem;
 }
 
-.footer-distr-nav :last-child {
+.footer-resident-complex-nav :last-child {
   margin-top: 0.75rem;
 }
 
-.footer-distr-link {
+.footer-link {
+  display: block;
   margin-top: 0.5rem;
   line-height: 1.375rem;
   text-decoration: none;
@@ -193,7 +190,7 @@ html {
   color: #fff;
 }
 
-.footer-about-header {
+.footer-tittle-header {
   margin-top: 1rem;
   margin-bottom: 0rem;
   font-size: 0.875rem;
@@ -201,18 +198,8 @@ html {
   color: #646971;
 }
 
-.footer-about-nav {
+.footer-tittle-nav {
   font-size: 0.875rem;
-  display: flex;
-  flex-flow: column;
-}
-
-.footer-about-link {
-  margin-top: 0.5rem;
-  line-height: 1.375rem;
-  text-decoration: none;
-  font-weight: 300;
-  color: #fff;
 }
 
 .footer-credits {
@@ -221,4 +208,59 @@ html {
   font-weight: 300;
   font-size: 0.6875rem;
   color: #a9afb6;
+}
+
+/*--- Style fot page comlex.html ---*/
+
+.separator-line {
+  border: 1px solid #eaebf0;
+  background-color: #eaebf0;
+}
+
+.complex-header {
+
+}
+.complex-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.complex-header-info {
+  margin-top: 0rem;
+}
+.complex-header-tittle {
+  margin: 0;
+  font-family: 'Philosopher';
+  font-size: 2rem;
+  color: #3e4247;
+  line-height: 2.25rem;
+}
+.complex-header-location {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.375rem;
+  color: #a9afb6;
+}
+
+.complex-header-button {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-radius: 2px;
+  border: solid 1px #e0e0e1;
+  border-color: #e0e0e1;
+  font-size: 0.625rem;
+  font-weight: 300;
+  line-height: 0.625rem;
+  color: #00779a;
+}
+
+.slider {
+  display: flex;
+  justify-content: flex-start;
+  overflow: scroll;
+}
+.slider-image {
+  height: 25rem;
 }
