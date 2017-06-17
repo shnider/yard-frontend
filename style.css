@@ -6,34 +6,38 @@ html {
   background-image: url(images/background.png);
   background-size: 1.25rem 0.625rem;
   background-color: #EAEBF0;
-
+  text-rendering: optimizeLegibility !important;
 }
+
 .header-main {
+  background-color: #fff;
+}
+
+.header-wrapper {
   display: flex;
   justify-content: space-between;
-  background-color: #fff
 }
+
 .header-compass-logo {
-  width: 11.19375rem;
-  height: 1.5rem;
-  padding-left: 8rem;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  height: auto;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   object-fit: contain;
 }
+
 .header-navigation {
-  padding-right: 8rem;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   line-height: 1.25rem;
 }
+
 .header-navigation-links {
   margin-left: 2rem;
-
   font-size: 1rem;
   color: #3e4247;
   text-decoration: none;
 }
+
 .compass-dev-logo {
   height: 18.1875rem;
   display: flex;
@@ -41,25 +45,31 @@ html {
   background-color: #161616;
   margin-bottom: 0;
 }
+
 .introduction {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.introduction-main-heading {
   margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.introduction-heading {
   margin-bottom: 0.5rem;
-  color: #3e4247;
+  text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
+  color: #3e4247;
 }
+
 .introduction-text {
   margin-bottom: 1rem;
   text-align: center;
   line-height: 1.5rem;
   color: #3e4247;
 }
+
+.introduction-button-wrapper {
+  text-align: center;
+}
+
 .introduction-button {
   background-color: #000;
   border-radius: 2px;
@@ -68,11 +78,11 @@ html {
   padding-right: 1.9375rem;
   padding-top: 0.8125rem;
   padding-bottom: 0.8125rem;
-  margin-bottom: 4rem;
   font-family: 'Fira Sans',sans-serif;
   line-height: 1rem;
   color: #fff;
 }
+
 .cards {
 
 }
@@ -83,29 +93,35 @@ html {
   text-decoration: none;
   border-bottom: solid 2px #646971;
 }
+
 .card:hover {
   box-shadow: 0 0 1.025rem 0px rgba(0, 0, 0, .3);
 }
+
 .card-image {
   width: 30.25rem;
   height: 21.875rem;
 }
+
 .card-content {
   display:flex;
   flex-flow: column;
   padding: 1.5rem 0 0 1.019rem;
 }
+
 .card-content :first-child {
   margin: 0;
 }
+
 .card-content :last-child {
   margin: 0;
 }
-.card-loc {
+
+.card-location {
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   color: #646971;
-
 }
+
 .card-header {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
@@ -113,37 +129,44 @@ html {
   line-height: 3.5rem;
   color: #000;
 }
+
 .card-text {
   padding-right: 6.29375rem;
   line-height: 1.5rem;
   color: #3e4247;
 }
+
 .main-footer {
   margin-top: 6rem;
   background-color: #111;
 }
-.footer-detalis-header {
+
+.footer-credentials-header {
   margin-top: 2rem;
   margin-bottom: 0rem;
   font-size: 0.875rem;
   font-weight: bold;
   color: #646971;
 }
-.footer-detalis {
+
+.footer-credentials {
   margin-top: 0.5rem;
   margin-bottom: 0;
   font-size: 0.875rem;
   font-weight: 300;
   color: #a9afb6;
 }
-.footer-detalis:last-child {
+
+.footer-credentials:last-child {
   margin-top: 1rem;
 }
+
 .footer-line {
   margin-top: 2rem;
   border: 1px solid #3e4247;
   background-color: #3e4247;
 }
+
 .footer-distr-header {
   margin-top: 1rem;
   margin-bottom: 0rem;
@@ -151,14 +174,17 @@ html {
   font-weight: bold;
   color: #646971;
 }
+
 .footer-distr-nav {
   display: flex;
   flex-flow: column;
   font-size: 0.875rem;
 }
+
 .footer-distr-nav :last-child {
   margin-top: 0.75rem;
 }
+
 .footer-distr-link {
   margin-top: 0.5rem;
   line-height: 1.375rem;
@@ -166,6 +192,7 @@ html {
   font-weight: 300;
   color: #fff;
 }
+
 .footer-about-header {
   margin-top: 1rem;
   margin-bottom: 0rem;
@@ -173,11 +200,13 @@ html {
   font-weight: bold;
   color: #646971;
 }
+
 .footer-about-nav {
   font-size: 0.875rem;
   display: flex;
   flex-flow: column;
 }
+
 .footer-about-link {
   margin-top: 0.5rem;
   line-height: 1.375rem;
@@ -185,6 +214,7 @@ html {
   font-weight: 300;
   color: #fff;
 }
+
 .footer-credits {
   margin-top: 8rem;
   margin-bottom: 1.75rem;
