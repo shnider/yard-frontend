@@ -13,7 +13,7 @@ body {
 }
 
 .complex-header {
-  border-top: 2px solid #eaebf0;
+  border-top: 1px solid #eaebf0;
 
 }
 .complex-header-wrapper {
@@ -83,18 +83,20 @@ body {
   background-color: #00779a;
   font-family: 'Fira Sans', sans-serif;
   font-weight: 300;
-  font-size: 0.875rem;
-  line-height: 0.875rem;
+  font-size: 0.625rem;
+  line-height: 0.625rem;
   color: #fff;
  }
 
 .complex-summary {
   display: flex;
-  border-bottom: 2px solid #eaebf0;
+  border-bottom: 1px solid #eaebf0;
 }
 
 .complex-summary-heading {
   display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   margin-right: 3rem;
   font-family: 'Philosopher';
   font-weight: bold;
@@ -115,10 +117,12 @@ body {
 }
 
 .complex-qualities {
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .complex-qualities-heading {
+  margin: 0 0 1.125rem 0;
   font-family: 'Philosopher';
   font-weight: bold;
   font-size: 1.5rem;
@@ -128,6 +132,7 @@ body {
 
 .complex-qualities-record {
   display: flex;
+  margin: 0 1rem .5rem 0;
 }
 .complex-qualities-name {
   width: 50%;
@@ -137,7 +142,7 @@ body {
 
 .complex-qualities-value {
   width: 50%;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.375rem;
   color: #3e4247;
 
@@ -145,7 +150,7 @@ body {
 
 .complex-description {
   display: flex;
-  border-bottom: 2px solid #eaebf0;
+  border-bottom: 1px solid #eaebf0;
 }
 
 .complex-description-heading {
