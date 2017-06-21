@@ -2,9 +2,9 @@ import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Card from './Card';
-import bitmap1 from './img/bitmap1.jpg'
-import bitmap2 from './img/bitmap2.jpg'
-import bitmap3 from './img/bitmap3.jpg'
+import bitmap1 from '../images/bitmap.jpg'
+import bitmap2 from '../images/bitmap2.jpg'
+import bitmap3 from '../images/bitmap3.jpg'
 
 
 const Cards = styled.section`
