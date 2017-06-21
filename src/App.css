@@ -1,24 +1,44 @@
-.App {
-  text-align: center;
+html {
+  font-family: 'Fira Sans', sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  background-image: url(images/background.png);
+  background-size: 1.25rem 0.625rem;
+  background-color: #EAEBF0;
+  text-rendering: optimizeLegibility !important;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+
+/*-- Test style --
+
+.header-main {
+  background-color: #fff;
 }
 
-.App-intro {
-  font-size: large;
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.header-compass-logo {
+  height: auto;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  object-fit: contain;
 }
+
+.header-navigation {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.25rem;
+}
+
+.header-navigation-link {
+  margin-left: 2rem;
+  font-size: 1rem;
+  color: #3e4247;
+  text-decoration: none;
+}
+
+*/
