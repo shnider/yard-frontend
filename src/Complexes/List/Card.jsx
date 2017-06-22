@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const Card = styled.a`
+const Card = styled(Link)`
   display: flex;
   margin-bottom: 3rem;
   background: #fff;
@@ -50,7 +51,7 @@ const Text = styled.p`
 `;
 
 export default props =>
-  (<Card id={props.id}>
+  (<Card to={`/complex/${props.id}`}>
     <Image src={`${process.env.PUBLIC_URL}/images/compleximg${props.id}.jpg`} alt={props.imgAlt} />
     <Contetnt>
       <Location>{props.location}</Location>
