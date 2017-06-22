@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 
 const Section = styled.section`
@@ -40,15 +39,16 @@ const Button = styled.button`
   color: #fff;
 `;
 
-export default () => {
-  return (
-    <Section>
-      <Heading  class="introduction-heading">Discover Our New Developments</Heading >
-      <Text>Compass brings a modern approach to new development marketing and sales. From boutique rental <br/> conversions to luxurious ground-up condominiums, browse our portfolio of current offerings.</Text>
-      <ButtonWrapper>
-        <Button>Contact The Team</Button>
-      </ButtonWrapper>
-    </Section>
-
+export default () => (
+  <Section>
+    <Heading>Discover Our New Developments</Heading>
+    <Text>
+        Compass brings a modern approach to new development marketing and sales.
+        From boutique rental <br /> conversions to luxurious ground-up
+        condominiums, browse our portfolio of current offerings.
+      </Text>
+    <ButtonWrapper>
+      <Button>Contact The Team</Button>
+    </ButtonWrapper>
+  </Section>
   );
-};

@@ -50,15 +50,13 @@ const Text = styled.p`
   color: #3e4247;
 `;
 
-export default (props) => {
-  return (
-    <Card id={props.id}>
-      <Image src={props.imgSrc} alt={props.imgAlt} />
-      <Contetnt>
-        <Location>{props.location}</Location>
-        <Heading>{props.name}</Heading>
-        <Text>{props.text}</Text>
-      </Contetnt>
-    </Card>
+export default props => (
+  <Card id={props.id}>
+    <Image src={`../images/compleximg${props.id}.jpg`} alt={props.imgAlt} />
+    <Contetnt>
+      <Location>{props.location}</Location>
+      <Heading>{props.name}</Heading>
+      <Text>{props.text}</Text>
+    </Contetnt>
+  </Card>
   );
-};

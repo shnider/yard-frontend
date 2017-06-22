@@ -3,42 +3,16 @@ html {
 }
 
 body {
+  text-rendering: optimizeLegibility !important;
+   -webkit-font-smoothing: antialiased;
+}
+
+.complexes {
   background-image: url(images/background.png);
   background-size: 1.25rem 0.625rem;
   background-color: #EAEBF0;
-  text-rendering: optimizeLegibility !important;
 }
 
-
-/*-- Test style --
-
-.header-main {
-  background-color: #fff;
+.complex {
+  background: #fff;
 }
-
-.header-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-.header-compass-logo {
-  height: auto;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  object-fit: contain;
-}
-
-.header-navigation {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  line-height: 1.25rem;
-}
-
-.header-navigation-link {
-  margin-left: 2rem;
-  font-size: 1rem;
-  color: #3e4247;
-  text-decoration: none;
-}
-
-*/

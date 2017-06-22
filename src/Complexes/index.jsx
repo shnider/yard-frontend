@@ -6,7 +6,6 @@ import bitmap1 from '../images/bitmap.jpg'
 import bitmap2 from '../images/bitmap2.jpg'
 import bitmap3 from '../images/bitmap3.jpg'
 
-
 const Cards = styled.section`
   margin-bottom: 6rem;
 `;
