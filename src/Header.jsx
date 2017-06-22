@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import logo from './images/compass-logo.svg';
 
@@ -32,19 +32,16 @@ const NavLink = styled.a`
   text-decoration: none;
 `;
 
-export default () => {
-  return (
-    <Header>
-      <Grid>
-        <Wrapper>
-          <CompassLogo src={logo} alt="Compas"/>
-          <Navigation>
-            <NavLink href="">Купить</NavLink>
-            <NavLink href="">Снять</NavLink>
-            <NavLink href="">Наши Агенты</NavLink>
-          </Navigation>
-        </Wrapper>
-      </Grid>
-    </Header>
-  );
-};
+export default () =>
+  (<Header>
+    <Grid>
+      <Wrapper>
+        <CompassLogo src={logo} alt="Compas" />
+        <Navigation>
+          <NavLink href="">Купить</NavLink>
+          <NavLink href="">Снять</NavLink>
+          <NavLink href="">Наши Агенты</NavLink>
+        </Navigation>
+      </Wrapper>
+    </Grid>
+  </Header>);

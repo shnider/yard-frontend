@@ -29,10 +29,7 @@ const Button = styled.button`
   background-color: #000;
   border-radius: 2px;
   border: none;
-  padding-left: 1.9375rem;
-  padding-right: 1.9375rem;
-  padding-top: 0.8125rem;
-  padding-bottom: 0.8125rem;
+  padding: 0.75rem 2rem;
   font-family: 'Fira Sans', sans-serif;
   font-size: 1rem;
   line-height: 1rem;

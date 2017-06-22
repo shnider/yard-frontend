@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Complexes from './Complexes';
+import Complexes from './Complexes/List';
 import Header from './Header';
 import Footer from './Footer';
 import './App.css';

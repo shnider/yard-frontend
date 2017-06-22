@@ -9,13 +9,12 @@ const Card = styled.a`
   border-bottom: solid 2px #646971;
 
   &:hover{
-  box-shadow: 0 0 1.025rem 0px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 1.025rem 0px rgba(0, 0, 0, .3);
   }
 `;
 
 const Image = styled.img`
-  width: 30.25rem;
-  height: 21.875rem;
+
 `;
 
 const Contetnt = styled.div`
@@ -52,7 +51,7 @@ const Text = styled.p`
 
 export default props =>
   (<Card id={props.id}>
-    <Image src={props.imgSrc} alt={props.imgAlt} />
+    <Image src={`${process.env.PUBLIC_URL}/images/compleximg${props.id}.jpg`} alt={props.imgAlt} />
     <Contetnt>
       <Location>{props.location}</Location>
       <Heading>{props.name}</Heading>

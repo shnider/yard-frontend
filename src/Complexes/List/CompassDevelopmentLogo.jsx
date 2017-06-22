@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import devlogo from '../images/compass-development-logo.svg';
+import devlogo from '../../images/compass-development-logo.svg';
 
 const Section = styled.section`
   display: flex;
@@ -10,8 +10,7 @@ const Section = styled.section`
   margin-bottom: 0;
 `;
 
-export default () => (
-  <Section>
+export default () =>
+  (<Section>
     <img src={devlogo} alt="Compass Development" />
-  </Section>
-  );
+  </Section>);
