@@ -5,6 +5,7 @@ import devlogo from '../images/compass-development-logo.svg';
 const Section = styled.section`
   display: flex;
   justify-content: center;
+  padding: 5rem 0;
   background-color: #161616;
   margin-bottom: 0;
 `;
