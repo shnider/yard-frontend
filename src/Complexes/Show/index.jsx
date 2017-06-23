@@ -10,6 +10,8 @@ import Heading from './Heading';
 import QualitiesRecord from './QualitiesRecord';
 import Description from './Description';
 import InfrastructureName from './InfrastructureName';
+import OfferHeading from './OfferHeading';
+import Offer from './Offer';
 
 const Summary = styled.div`
   display: flex;
@@ -24,6 +26,11 @@ const Qualities = styled.section`
 const Infrastructure = styled.section`
   margin-top: 2rem;
   padding-bottom: 3.5rem;
+`;
+
+const Offers = styled.section`
+  background-color: #f4f5f9;
+  padding-bottom: 4rem;
 `;
 
 export default () =>
@@ -109,5 +116,21 @@ export default () =>
           </Row>
         </Infrastructure>
       </Grid>
+      <Offers>
+        <OfferHeading />
+        <Grid>
+          <Row>
+            <Col lg="4">
+              <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 20.4 }} />
+            </Col>
+            <Col lg="4">
+              <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
+            </Col>
+            <Col lg="4">
+              <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
+            </Col>
+          </Row>
+        </Grid>
+      </Offers>
     </div>
   </BodyClassName>);

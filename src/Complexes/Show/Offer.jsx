@@ -54,9 +54,9 @@ export default props =>
     <Title>1-комнатные квартиры</Title>
     <Record>
       <Name>Площадь</Name>
-      <Value>от 59 до 120 м²</Value>
+      <Value>от {props.square.min} до {props.square.max} м²</Value>
       <Name>Стоимость</Name>
-      <Value>от 20.3 до 84.2 млн руб</Value>
+      <Value>от {props.price.min} до {props.price.max} млн руб</Value>
     </Record>
     <ButtonWrapper>
       <Button>Посмотреть предложения</Button>
