@@ -12,6 +12,8 @@ import Description from './Description';
 import InfrastructureName from './InfrastructureName';
 import OfferHeading from './OfferHeading';
 import Offer from './Offer';
+import Around from './Around';
+import Location from './Location';
 
 const Summary = styled.div`
   display: flex;
@@ -120,17 +122,19 @@ export default () =>
         <OfferHeading />
         <Grid>
           <Row>
-            <Col lg="4">
+            <Col lg={4}>
               <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 20.4 }} />
             </Col>
-            <Col lg="4">
+            <Col lg={4}>
               <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
             </Col>
-            <Col lg="4">
+            <Col lg={4}>
               <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
             </Col>
           </Row>
         </Grid>
       </Offers>
+      <Around />
+      <Location />
     </div>
   </BodyClassName>);
