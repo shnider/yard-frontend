@@ -13,7 +13,7 @@ const Heading = styled.h2`
   color: #3e4247;
 `;
 
-const HeadingLess = styled.small`
+const Subtitle = styled.small`
   display: block;
   padding-top: 0.625rem;
   font-family: 'Fira Sans', sans-serif;
@@ -26,5 +26,5 @@ const HeadingLess = styled.small`
 export default props =>
   (<Heading>
     {props.children}
-    <HeadingLess>{props.less}</HeadingLess>
+    <Subtitle>{props.less}</Subtitle>
   </Heading>);
