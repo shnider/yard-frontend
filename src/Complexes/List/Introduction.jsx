@@ -14,7 +14,7 @@ const Heading = styled.h2`
   color: #3e4247;
 `;
 
-const Text = styled.text`
+const Text = styled.p`
   margin-bottom: 1rem;
   line-height: 1.5rem;
   color: #3e4247;
