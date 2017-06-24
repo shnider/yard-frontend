@@ -21,6 +21,6 @@ const Value = styled.dd`
 
 export default props =>
   (<Record>
-    <Name>{props.name}</Name>
+    <Name>{props.label}</Name>
     <Value>{props.value}</Value>
   </Record>);

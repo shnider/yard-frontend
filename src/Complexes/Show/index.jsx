@@ -7,7 +7,7 @@ import Header from './Header';
 import ImageSlider from './ImageSlider';
 import SummaryRecord from './SummaryRecord';
 import Heading from './Heading';
-import Label from './Label';
+import QualitiesRecord from './QualitiesRecord';
 import Description from './Description';
 import InfrastructureName from './InfrastructureName';
 import OfferHeading from './OfferHeading';
@@ -50,35 +50,35 @@ export default () =>
           <Heading>Характеристики</Heading>
           <Row>
             <Col lg={4}>
-              <Label name="Количество квартир:" value="1503" />
+              <QualitiesRecord label="Количество квартир:" value="1503" />
             </Col>
             <Col lg={4}>
-              <Label name="Количество квартир:" value="1503" />
+              <QualitiesRecord label="Количество квартир:" value="1503" />
             </Col>
             <Col lg={4}>
-              <Label name="Количество квартир:" value="1503" />
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={4}>
-              <Label name="Статус:" value="Квартиры" />
-            </Col>
-            <Col lg={4}>
-              <Label name="Количество квартир:" value="1503" />
-            </Col>
-            <Col lg={4}>
-              <Label name="Количество квартир:" value="1503" />
+              <QualitiesRecord label="Количество квартир:" value="1503" />
             </Col>
           </Row>
           <Row>
             <Col lg={4}>
-              <Label name="Цены:" value="от 5.3 до 143.5 млн" />
+              <QualitiesRecord label="Статус:" value="Квартиры" />
             </Col>
             <Col lg={4}>
-              <Label name="Количество квартир:" value="1503" />
+              <QualitiesRecord label="Количество квартир:" value="1503" />
             </Col>
             <Col lg={4}>
-              <Label name="Количество квартир:" value="1503" />
+              <QualitiesRecord label="Количество квартир:" value="1503" />
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={4}>
+              <QualitiesRecord label="Цены:" value="от 5.3 до 143.5 млн" />
+            </Col>
+            <Col lg={4}>
+              <QualitiesRecord label="Количество квартир:" value="1503" />
+            </Col>
+            <Col lg={4}>
+              <QualitiesRecord label="Количество квартир:" value="1503" />
             </Col>
           </Row>
         </Qualities>
