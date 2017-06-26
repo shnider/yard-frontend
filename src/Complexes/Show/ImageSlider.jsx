@@ -6,7 +6,7 @@ const Images = styled.div`
   display: flex;
   position: relative;
   justify-content: flex-start;
-  overflow: scroll;
+  overflow: auto;
 `;
 
 const Image = styled.img`

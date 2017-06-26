@@ -20,9 +20,8 @@ const CompassLogo = styled.img`
 `;
 
 const Navigation = styled.nav`
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  line-height: 1.25rem;
+  margin: 1.5rem 0;
+  line-height: 1rem;
 `;
 
 const NavLink = styled.a`

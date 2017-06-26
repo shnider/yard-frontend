@@ -61,7 +61,7 @@ const Link = styled.a`
 `;
 
 const Credits = styled.p`
-  margin-top: 8rem;
+  margin-top: 6rem;
   margin-bottom: 1.75rem;
   font-weight: 300;
   font-size: 0.6875rem;

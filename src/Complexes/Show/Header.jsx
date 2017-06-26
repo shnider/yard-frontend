@@ -33,10 +33,11 @@ const Location = styled.p`
 `;
 
 const ButtonWrapper = styled.div`
-  margin-right: 1.5rem;
+
 `;
 
 const Button = styled.button`
+  display: block;
   padding: 0.5rem 1rem;
   background-color: #fff;
   border-radius: 2px;
