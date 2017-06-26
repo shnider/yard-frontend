@@ -4150,6 +4150,10 @@ normalize.css@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
 
+now@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/now/-/now-7.1.0.tgz#5f9a30dbf2a8056db59289f3a1d993d6ed51cd7c"
+
 npmlog@^4.0.2:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.1.0.tgz#dc59bee85f64f00ed424efb2af0783df25d1c0b5"

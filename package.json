@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "normalize.css": "^7.0.0",
+    "now": "^7.1.0",
     "react": "^15.6.1",
     "react-body-classname": "^1.2.0",
     "react-dom": "^15.6.1",
