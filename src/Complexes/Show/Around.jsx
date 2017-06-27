@@ -32,6 +32,7 @@ const Link = styled.a`
 `;
 
 const Image = styled.img`
+  width: 100%;
   height: 35rem;
   margin-top: 4rem;
 `;

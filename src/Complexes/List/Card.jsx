@@ -22,17 +22,10 @@ const Contetnt = styled.div`
   display:flex;
   flex-flow: column;
   padding: 1.5rem 2rem;
-
-  &:first-child {
-    margin: 0;
-  }
-
-  &:last-child {
-    margin: 0;
-  }
 `;
 
 const Location = styled.p`
+  margin: 0;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   color: #646971;
 `;
@@ -46,6 +39,7 @@ const Heading = styled.h3`
 `;
 
 const Text = styled.p`
+  margin: 0;
   line-height: 1.5rem;
   color: #3e4247;
 `;

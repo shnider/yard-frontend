@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 36.4375rem;
+  width: 100%;
   height: 19.125rem;
   box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
 `;

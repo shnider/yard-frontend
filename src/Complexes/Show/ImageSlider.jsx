@@ -6,7 +6,7 @@ const Images = styled.div`
   display: flex;
   position: relative;
   justify-content: flex-start;
-  overflow: scroll;
+  overflow: auto;
 `;
 
 const Image = styled.img`
@@ -34,11 +34,11 @@ const Button = styled.button`
 export default () =>
   (<div>
     <Images>
-      <Image src={`${process.env.PUBLIC_URL}/images/slider1.png`} alt="image1" />
-      <Image src={`${process.env.PUBLIC_URL}/images/slider2.png`} alt="image2" />
-      <Image src={`${process.env.PUBLIC_URL}/images/slider3.png`} alt="image3" />
-      <Image src={`${process.env.PUBLIC_URL}/images/slider4.png`} alt="image4" />
-      <Image src={`${process.env.PUBLIC_URL}/images/slider5.png`} alt="image5" />
+      <Image src={`${process.env.PUBLIC_URL}/images/slider1.jpg`} alt="image1" />
+      <Image src={`${process.env.PUBLIC_URL}/images/slider2.jpg`} alt="image2" />
+      <Image src={`${process.env.PUBLIC_URL}/images/slider3.jpg`} alt="image3" />
+      <Image src={`${process.env.PUBLIC_URL}/images/slider4.jpg`} alt="image4" />
+      <Image src={`${process.env.PUBLIC_URL}/images/slider5.jpg`} alt="image5" />
     </Images>
     <Grid>
       <ButtonWrapper>
