@@ -26,6 +26,7 @@ const Contetnt = styled.div`
 
 const Location = styled.p`
   margin: 0;
+  text-transform: uppercase;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   color: #646971;
 `;
