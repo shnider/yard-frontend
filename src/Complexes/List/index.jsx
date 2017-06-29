@@ -8,6 +8,7 @@ import BodyClassName from 'react-body-classname';
 import CompassDevelopmentLogo from './CompassDevelopmentLogo';
 import Introduction from './Introduction';
 import Card from './Card';
+import { getImageURL } from './../../utilits';
 
 const Cards = styled.section`
   margin-bottom: 6rem;
@@ -44,6 +45,7 @@ class ComplexesList extends Component {
                   id={complex.id}
                   name={complex.name}
                   location={formatLocation(complex.location)}
+                  imgSrc={getImageURL(complex.images, 512)}
                 >
                   Something about complex
                 </Card>),
