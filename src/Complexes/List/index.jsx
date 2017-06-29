@@ -13,6 +13,10 @@ const Cards = styled.section`
   margin-bottom: 6rem;
 `;
 
+function formatLocation(location) {
+  return [location.subLocalityName, location.localityName].filter(loc => !!loc).join(', ');
+}
+
 class ComplexesList extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +39,15 @@ class ComplexesList extends Component {
           <Introduction />
           <Cards>
             <Grid>
-              {this.state.items.map(complex => (<Card id={complex.id} name={complex.name}>Something about complex</Card>),)}
+              {this.state.items.map(complex =>
+                (<Card
+                  id={complex.id}
+                  name={complex.name}
+                  location={formatLocation(complex.location)}
+                >
+                  Something about complex
+                </Card>),
+              )}
             </Grid>
           </Cards>
         </div>
