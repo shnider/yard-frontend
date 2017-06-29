@@ -8,7 +8,8 @@ import BodyClassName from 'react-body-classname';
 import CompassDevelopmentLogo from './CompassDevelopmentLogo';
 import Introduction from './Introduction';
 import Card from './Card';
-import { getImageURL } from './../../utilits';
+import { get } from './../../api';
+import { getImageURL } from './../../utilities';
 
 const Cards = styled.section`
   margin-bottom: 6rem;
@@ -25,11 +26,9 @@ class ComplexesList extends Component {
   }
 
   componentDidMount() {
-    return fetch('https://api.jqestate.ru/v1/complexes?filter[state]=public')
-      .then(resp => resp.json())
-      .then(({ items }) => {
-        this.setState({ items });
-      });
+    get('/v1/complexes?filter[state]=public').then(({ items }) => {
+      this.setState({ items });
+    });
   }
 
   render() {
