@@ -15,8 +15,9 @@ const Card = styled(Link)`
 `;
 
 const Image = styled.img`
-  width: 40.5%;
-  height: 350px;
+  width: 484px;
+  height: 350px;  
+  object-fit: cover;
 `;
 
 const Contetnt = styled.div`

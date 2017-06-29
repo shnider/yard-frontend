@@ -19,7 +19,7 @@ function formatLocation(location) {
   return [location.subLocalityName, location.localityName].filter(loc => !!loc).join(', ');
 }
 
-class ComplexesList extends Component {
+class List extends Component {
   constructor(props) {
     super(props);
     this.state = { items: [] };
@@ -57,4 +57,4 @@ class ComplexesList extends Component {
   }
 }
 
-export default ComplexesList;
+export default List;
