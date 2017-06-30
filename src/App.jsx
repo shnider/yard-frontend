@@ -12,7 +12,7 @@ const App = () =>
     <div>
       <Header />
       <Route exact path="/" component={Complexes} />
-      <Route path="/complex" component={Complex} />
+      <Route path="/complex/:id" component={Complex} />
       <Footer />
     </div>
   </Router>);
