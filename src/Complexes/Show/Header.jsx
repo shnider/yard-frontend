@@ -50,13 +50,13 @@ const Button = styled.button`
   color: #00779a;
 `;
 
-export default () =>
+export default props =>
   (<Header>
     <Grid>
       <Wrapper>
         <Info>
-          <Title>Жилой комплекс «Полянка/44»</Title>
-          <Location>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Location>
+          <Title>{props.children}</Title>
+          <Location>{props.address}</Location>
         </Info>
         <ButtonWrapper>
           <Button>В избранное</Button>
