@@ -16,7 +16,7 @@ const Cards = styled.section`
 `;
 
 function formatLocation(location) {
-  return [location.subLocalityName, location.localityName].filter(loc => !!loc).join(', ');
+  return [location.subLocalityName, location.street, location.house].filter(loc => !!loc).join(', ');
 }
 
 class List extends Component {
