@@ -15,7 +15,9 @@ const Card = styled(Link)`
 `;
 
 const Image = styled.img`
-
+  width: 484px;
+  height: 350px;
+  object-fit: cover;
 `;
 
 const Contetnt = styled.div`
@@ -26,6 +28,7 @@ const Contetnt = styled.div`
 
 const Location = styled.p`
   margin: 0;
+  text-transform: uppercase;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
   color: #646971;
 `;
@@ -45,8 +48,8 @@ const Text = styled.p`
 `;
 
 export default props =>
-  (<Card to={`/complex/${props.id}`}>
-    <Image src={`${process.env.PUBLIC_URL}/images/compleximg${props.id}.jpg`} alt={props.imgAlt} />
+  (<Card to={`/complexes/${props.id}`}>
+    <Image src={props.imgSrc} alt={props.imgAlt} />
     <Contetnt>
       <Location>{props.location}</Location>
       <Heading>{props.name}</Heading>
