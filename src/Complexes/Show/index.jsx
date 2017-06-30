@@ -36,6 +36,16 @@ const Offers = styled.section`
   padding-bottom: 4rem;
 `;
 
+function formatLocation(location) {
+  return [location.subLocalityName, location.street, location.house].filter(loc => !!loc).join(', ');
+}
+
+function formatPrice(from, to) {
+  const priceFrom = Math.round(from.rub / 10000000);
+  const priceTo = Math.round(to.rub / 1000000);
+  return `от ${priceFrom} до ${priceTo} млн`;
+}
+
 class Show extends Component {
   constructor(props) {
     super(props);
@@ -57,14 +67,15 @@ class Show extends Component {
   }
 
   render() {
-    const { name, location = {} } = this.state;
-    console.log(location);
+    const { name, location = {}, images = [], statistics = {} } = this.state;
+    const { price = {} } = statistics;
+    const { from = {}, to = {} } = price;
 
     return (
       <BodyClassName className="complex">
         <div>
-          <Header address={location}>{name}</Header>
-          <ImageSlider />
+          <Header address={formatLocation(location)}>{name}</Header>
+          <ImageSlider images={images} />
           <Grid>
             <Summary>
               <SummaryRecord less="предложений">950</SummaryRecord>
@@ -75,13 +86,13 @@ class Show extends Component {
               <Heading>Характеристики</Heading>
               <Row>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value="1503" />
+                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
                 </Col>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value="1503" />
+                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
                 </Col>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value="1503" />
+                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
                 </Col>
               </Row>
               <Row>
@@ -89,21 +100,21 @@ class Show extends Component {
                   <QualitiesRecord label="Статус:" value="Квартиры" />
                 </Col>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value="1503" />
+                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
                 </Col>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value="1503" />
+                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
                 </Col>
               </Row>
               <Row>
                 <Col lg={4}>
-                  <QualitiesRecord label="Цены:" value="от 5.3 до 143.5 млн" />
+                  <QualitiesRecord label="Цены:" value={formatPrice(from, to)} />
                 </Col>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value="1503" />
+                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
                 </Col>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value="1503" />
+                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
                 </Col>
               </Row>
             </Qualities>
