@@ -16,7 +16,7 @@ const Card = styled(Link)`
 
 const Image = styled.img`
   width: 484px;
-  height: 350px;  
+  height: 350px;
   object-fit: cover;
 `;
 
@@ -48,7 +48,7 @@ const Text = styled.p`
 `;
 
 export default props =>
-  (<Card to={`/complex/${props.id}`}>
+  (<Card to={`/complexes/${props.id}`}>
     <Image src={props.imgSrc} alt={props.imgAlt} />
     <Contetnt>
       <Location>{props.location}</Location>
