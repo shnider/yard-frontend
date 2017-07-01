@@ -17,7 +17,7 @@ import Offer from './Offer';
 import Around from './Around';
 import Location from './Location';
 import { get } from './../../api';
-import type { ComplexTypes } from '../types';
+import type { ComplexType, LocationType } from '../types';
 
 const Summary = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ const Offers = styled.section`
   padding-bottom: 4rem;
 `;
 
-function formatLocation(location) {
+function formatLocation(location: LocationType) {
   return [location.subLocalityName, location.street, location.house].filter(loc => !!loc).join(', ');
 }
 
@@ -51,7 +51,7 @@ function formatPrice(from, to) {
 
 class Show extends Component {
 
-  state: { complex: Array<ComplexTypes> } = { complex: [] };
+  state: { complex: Array<ComplexType> } = { complex: [] };
 
   componentDidMount() {
     this.load(this.props.match.params.id);
@@ -68,7 +68,7 @@ class Show extends Component {
   }
 
   render() {
-    const { name, location = {}, images = [], statistics = {} }  = this.state;
+    const { name, location = {}, images = [], statistics = {} } = this.state;
     const { price = {} } = statistics;
     const { from = {}, to = {} } = price;
 

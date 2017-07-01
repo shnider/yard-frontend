@@ -1,10 +1,10 @@
 // @flow
-export type ImageTypes = {
+export type ImageType = {
   id: number,
   isPublic: boolean,
 }
 
-export type LocationTypes = {
+export type LocationType = {
   latitude: ?number,
   localityId: ?number,
   subLocalityName: string,
@@ -20,7 +20,7 @@ export type LocationTypes = {
   regionName: ?string,
 };
 
-export type ComplexTypes = {
+export type ComplexType = {
   commissioningYear?: number,
   adjacentTerritory: {
     area?: number,
@@ -31,7 +31,7 @@ export type ComplexTypes = {
   },
   name: string,
   updatedAt?: string,
-  location: LocationTypes,
+  location: LocationType,
   state: string,
   statistics?: {
     resalePropertiesCount: number,

@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import { getImageURL } from './../../utilities';
-import type { ImageTypes } from './../types';
+import type { ImageType } from './../types';
 
 const Images = styled.div`
   display: flex;
@@ -35,7 +35,7 @@ const Button = styled.button`
   color: #fff;
 `;
 
-type Props = { images: Array<ImageTypes> };
+type Props = { images: Array<ImageType> };
 
 export default ({ images }: Props) =>
   (<div>

@@ -11,13 +11,13 @@ import Introduction from './Introduction';
 import Card from './Card';
 import { get } from './../../api';
 import { getImageURL } from './../../utilities';
-import type { ComplexTypes } from '../types';
+import type { ComplexType, LocationType } from '../types';
 
 const Cards = styled.section`
-  margin-bottom: 6rem;complexTypes
+  margin-bottom: 6rem;
 `;
 
-function formatLocation(location) {
+function formatLocation(location: LocationType) {
   return [location.subLocalityName, location.street, location.house]
     .filter(loc => !!loc)
     .join(', ');
@@ -25,7 +25,7 @@ function formatLocation(location) {
 
 class List extends Component {
 
-  state: { items: Array<ComplexTypes> } = { items: [] };
+  state: { items: Array<ComplexType> } = { items: [] };
 
   componentDidMount() {
     get('/v1/complexes?filter[state]=public').then(({ items }) => {
