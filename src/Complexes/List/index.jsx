@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities*/
+// @flow
 
 import React, { Component } from 'react';
 import { Grid } from 'react-flexbox-grid';
@@ -10,20 +11,21 @@ import Introduction from './Introduction';
 import Card from './Card';
 import { get } from './../../api';
 import { getImageURL } from './../../utilities';
+import type { ComplexTypes } from '../types';
 
 const Cards = styled.section`
-  margin-bottom: 6rem;
+  margin-bottom: 6rem;complexTypes
 `;
 
-function formatLocation(location) {
-  return [location.subLocalityName, location.street, location.house].filter(loc => !!loc).join(', ');
+function formatLocation(location): string {
+  return [location.subLocalityName, location.street, location.house]
+    .filter(loc => !!loc)
+    .join(', ');
 }
 
 class List extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { items: [] };
-  }
+
+  state: { items: Array<ComplexTypes> } = { items: [] };
 
   componentDidMount() {
     get('/v1/complexes?filter[state]=public').then(({ items }) => {
@@ -45,6 +47,7 @@ class List extends Component {
                   name={complex.name}
                   location={formatLocation(complex.location)}
                   imgSrc={getImageURL(complex.images[0])}
+                  imgAlt="CardImage"
                 >
                   Something about complex
                 </Card>),

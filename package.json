@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-eslint": "7",
     "flow-typed": "^2.1.2",
     "normalize.css": "^7.0.0",
     "react": "^15.6.1",
