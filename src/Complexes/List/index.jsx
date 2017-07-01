@@ -17,7 +17,7 @@ const Cards = styled.section`
   margin-bottom: 6rem;complexTypes
 `;
 
-function formatLocation(location): string {
+function formatLocation(location) {
   return [location.subLocalityName, location.street, location.house]
     .filter(loc => !!loc)
     .join(', ');

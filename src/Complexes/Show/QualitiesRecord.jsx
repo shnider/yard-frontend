@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 
@@ -19,7 +21,12 @@ const Value = styled.dd`
   color: #3e4247;
 `;
 
-export default props =>
+type RecordTypes = {
+  label: string,
+  value: string,
+}
+
+export default (props: RecordTypes) =>
   (<Record>
     <Name>{props.label}</Name>
     <Value>{props.value}</Value>

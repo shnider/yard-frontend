@@ -1,4 +1,8 @@
 // @flow
+export type ImageTypes = {
+  id: number,
+  isPublic: boolean,
+}
 
 export type LocationTypes = {
   latitude: ?number,
@@ -102,9 +106,6 @@ export type ComplexTypes = {
   id: string,
   updatedByUserId?: number,
   createdAt: string,
-  images?: {
-    id: number,
-    isPublic: boolean,
-  },
+  images: ImageTypes,
   accreditors: ?Array<number>,
 };

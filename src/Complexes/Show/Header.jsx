@@ -1,6 +1,9 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
+import type { Children } from 'react';
 
 const Header = styled.div`
   border-top: 1px solid #eaebf0;
@@ -49,8 +52,12 @@ const Button = styled.button`
   line-height: 0.625rem;
   color: #00779a;
 `;
+type HeaderProps = {
+  address: string,
+  children: Children,
+};
 
-export default props =>
+export default (props: HeaderProps) =>
   (<Header>
     <Grid>
       <Wrapper>

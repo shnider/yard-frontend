@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -15,6 +17,7 @@ import Offer from './Offer';
 import Around from './Around';
 import Location from './Location';
 import { get } from './../../api';
+import type { ComplexTypes } from '../types';
 
 const Summary = styled.div`
   display: flex;
@@ -47,27 +50,25 @@ function formatPrice(from, to) {
 }
 
 class Show extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+
+  state: { complex: Array<ComplexTypes> } = { complex: [] };
 
   componentDidMount() {
     this.load(this.props.match.params.id);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     if (nextProps.match.params.id !== this.props.match.params.id) {
       this.load(nextProps.match.params.id);
     }
   }
 
-  load(complexId) {
+  load(complexId: string) {
     get(`/v1/complexes/${complexId}`).then(complex => this.setState(complex));
   }
 
   render() {
-    const { name, location = {}, images = [], statistics = {} } = this.state;
+    const { name, location = {}, images = [], statistics = {} }  = this.state;
     const { price = {} } = statistics;
     const { from = {}, to = {} } = price;
 

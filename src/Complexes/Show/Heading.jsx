@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import type { Children } from 'react';
 
 const Heading = styled.h2`
   margin-top: 0;
@@ -11,4 +12,4 @@ const Heading = styled.h2`
   line-height: 1.6875rem;
 `;
 
-export default props => <Heading>{props.children}</Heading>;
+export default (props: Children) => <Heading>{props.children}</Heading>;

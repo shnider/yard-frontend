@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import type { Children } from 'react';
 
 const Heading = styled.h2`
   display: block;
@@ -22,8 +23,11 @@ const Subtitle = styled.small`
   line-height: 1.375rem;
   color: #a9afb6;
 `;
-
-export default props =>
+type HeadingTypes = {
+  children: Children,
+  less: string,
+}
+export default (props: HeadingTypes) =>
   (<Heading>
     {props.children}
     <Subtitle>{props.less}</Subtitle>

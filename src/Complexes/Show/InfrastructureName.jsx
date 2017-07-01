@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import type { Children } from 'react';
 
 const Name = styled.p`
   margin-top: 0rem;
@@ -8,4 +9,4 @@ const Name = styled.p`
   color: #3e4247;
 `;
 
-export default props => <Name>{props.children}</Name>;
+export default (props: Children) => <Name>{props.children}</Name>;
