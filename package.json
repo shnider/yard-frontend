@@ -29,6 +29,11 @@
     "flow": "flow",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "prepush": "eslint src/ --ext .jsx --ext .js"
+    "lint": "eslint src/ --ext .jsx --ext .js",
+    "prepush": "yarn lint",
+    "deploy": "yarn build && now build"
+  },
+  "now": {
+    "alias": "yard-shinder"
   }
 }
