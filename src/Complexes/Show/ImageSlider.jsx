@@ -40,7 +40,7 @@ type Props = { images: Array<ImageType> };
 export default ({ images }: Props) =>
   (<div>
     <Images>
-      {images.map(image => (<Image src={getImageURL(image)} alt="Slider image" />))}
+      {images.map(image => (<Image src={getImageURL(image.id)} alt="ImageShow" />))}
     </Images>
     <Grid>
       <ButtonWrapper>

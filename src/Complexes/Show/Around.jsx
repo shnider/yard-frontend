@@ -39,6 +39,8 @@ const Image = styled.img`
   margin-top: 4rem;
 `;
 
+const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+
 export default () =>
   (<Section>
     <Grid>
@@ -49,7 +51,7 @@ export default () =>
           <Link href="#">Гид по Якиманке →</Link>
         </Col>
         <Col lg={6}>
-          <Image src={`${process.env.PUBLIC_URL}/images/polyanka.png`} />
+          <Image src={`${PUBLIC_URL}/images/polyanka.png`} />
         </Col>
       </Row>
     </Grid>

@@ -1,6 +1,6 @@
 // @flow
 export type ImageType = {
-  id: number,
+  id: string,
   isPublic: boolean,
 }
 

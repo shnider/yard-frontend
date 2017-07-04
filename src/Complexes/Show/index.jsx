@@ -17,6 +17,7 @@ import Offer from './Offer';
 import Around from './Around';
 import Location from './Location';
 import { get } from './../../api';
+import { formatPrice } from './../../utilities';
 import type { ComplexType, LocationType } from '../types';
 
 const Summary = styled.div`
@@ -41,12 +42,6 @@ const Offers = styled.section`
 
 function formatLocation(location: LocationType) {
   return [location.subLocalityName, location.street, location.house].filter(loc => !!loc).join(', ');
-}
-
-function formatPrice(from, to) {
-  const priceFrom = Math.round(from.rub / 10000000);
-  const priceTo = Math.round(to.rub / 1000000);
-  return `от ${priceFrom} до ${priceTo} млн`;
 }
 
 class Show extends Component {
@@ -109,7 +104,7 @@ class Show extends Component {
               </Row>
               <Row>
                 <Col lg={4}>
-                  <QualitiesRecord label="Цены:" value={formatPrice(from, to)} />
+                  <QualitiesRecord label="Цены:" value={formatPrice(from.rub, to.rub)} />
                 </Col>
                 <Col lg={4}>
                   <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
