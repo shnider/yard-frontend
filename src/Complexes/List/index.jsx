@@ -47,7 +47,7 @@ class List extends Component {
                   name={complex.name}
                   location={formatLocation(complex.location)}
                   imgSrc={getImageURL(complex.images[0].id)}
-                  imgAlt="CardImage"
+                  imgAlt="ComplexImage"
                 >
                   Something about complex
                 </Card>),
