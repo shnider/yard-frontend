@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export*/
 // @flow
 
 export function getImageURL(image: string, size: number = 512): string {

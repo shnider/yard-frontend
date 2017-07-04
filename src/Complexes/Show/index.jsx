@@ -40,15 +40,13 @@ const Offers = styled.section`
   padding-bottom: 4rem;
 `;
 
-function formatLocation({ subLocalityName, street, house }: LocationType) {
-  return [subLocalityName, street, house].filter(loc => !!loc).join(', ');
+function formatLocation(location: LocationType) {
+  return [location.subLocalityName, location.street, location.house].filter(loc => !!loc).join(', ');
 }
 
 class Show extends Component {
 
-  state = {};
-
-  state: ComplexType;
+  state: { complex: Array<ComplexType> } = { complex: [] };
 
   componentDidMount() {
     this.load(this.props.match.params.id);
