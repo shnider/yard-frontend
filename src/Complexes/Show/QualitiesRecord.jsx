@@ -23,7 +23,7 @@ const Value = styled.dd`
 
 type RecordTypes = {
   label: string,
-  value: string,
+  value: any,
 }
 
 export default (props: RecordTypes) =>
