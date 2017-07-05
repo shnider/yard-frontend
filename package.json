@@ -32,7 +32,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/ --ext .jsx --ext .js",
     "prepush": "yarn lint",
-    "deploy": "yarn build && now build --public --token $NOW_TOKEN && now -alias --token $NOW_TOKEN"
+    "deploy": "yarn build && now build --public --token $NOW_TOKEN && now alias --token $NOW_TOKEN"
   },
   "now": {
     "name": "build",
