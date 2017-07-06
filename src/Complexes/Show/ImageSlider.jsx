@@ -35,7 +35,7 @@ const Button = styled.button`
   color: #fff;
 `;
 
-type Props = { images: ImageType };
+type Props = { images: Array<ImageType> };
 
 export default ({ images }: Props) =>
   (<div>
