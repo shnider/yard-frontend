@@ -28,7 +28,7 @@ class List extends Component {
   state: { items: Array<ComplexType> } = { items: [] };
 
   componentDidMount() {
-    get('/v1/complexes?filter[state]=public').then(({ items }) => {
+    get('/api/v1/complexes').then(({ items }) => {
       this.setState({ items });
     });
   }
@@ -47,7 +47,7 @@ class List extends Component {
                   name={complex.name}
                   location={formatLocation(complex.location)}
                   imgSrc={getImageURL(complex.images[0].id)}
-                  imgAlt={`фото ${complex.name}`}
+                  imgAlt={`Фотография ${complex.name}`}
                 >
                   Something about complex
                 </Card>),
