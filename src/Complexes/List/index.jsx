@@ -23,12 +23,13 @@ function formatLocation(location: LocationType) {
     .join(', ');
 }
 
+
 class List extends Component {
 
   state: { items: Array<ComplexType> } = { items: [] };
 
   componentDidMount() {
-    get('/api/v1/complexes').then(({ items }) => {
+    get('/v1/complexes?filter[state]=public').then(({ items }) => {
       this.setState({ items });
     });
   }
