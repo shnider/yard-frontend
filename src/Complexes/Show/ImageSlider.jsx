@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import { getImageURL } from './../../utilities';
 import type { ImageType } from './../types';
+import Pluralizer from './../Pluralizer';
 
 const Images = styled.div`
   display: flex;
@@ -13,9 +14,7 @@ const Images = styled.div`
   overflow: auto;
 `;
 
-const Image = styled.img`
-  height: 25rem;
-`;
+const Image = styled.img`height: 25rem;`;
 
 const ButtonWrapper = styled.div`
   z-index: 1;
@@ -40,11 +39,19 @@ type Props = { images: Array<ImageType> };
 export default ({ images }: Props) =>
   (<div>
     <Images>
-      {images.map(image => (<Image src={getImageURL(image)} alt="ImageShow" />))}
+      {images.map(image => <Image src={getImageURL(image)} alt="ImageShow" />)}
     </Images>
     <Grid>
       <ButtonWrapper>
-        <Button>41 фотография</Button>
+        <Button>
+          <span>{`${images.length} `}</span>
+          <Pluralizer
+            one="фотография"
+            few="фотографии"
+            oth="фотографий"
+            lot={images.length}
+          />
+        </Button>
       </ButtonWrapper>
     </Grid>
   </div>);
