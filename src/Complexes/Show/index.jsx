@@ -40,8 +40,13 @@ const Offers = styled.section`
   padding-bottom: 4rem;
 `;
 
-function formatLocation({ subLocalityName, street, house }: LocationType) {
-  return [subLocalityName, street, house].filter(loc => !!loc).join(', ');
+function formatLocation({ subLocalityName, street, house, postalCode }: LocationType): string {
+  const mainLocation = [subLocalityName, street, house].filter(loc => !!loc).join(', ');
+
+  if (postalCode) {
+    return `${mainLocation} • ${postalCode}`;
+  }
+  return mainLocation;
 }
 
 class Show extends Component {
@@ -61,7 +66,7 @@ class Show extends Component {
   }
 
   load(complexId: string) {
-    get(`/v1/complexes/${complexId}`).then(complex => this.setState(complex));
+    get(`/api/v1/complexes/${complexId}`).then(complex => this.setState(complex));
   }
 
   render() {

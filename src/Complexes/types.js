@@ -106,6 +106,7 @@ export type ComplexType = {
   id: string,
   updatedByUserId?: number,
   createdAt: string,
+  image: ImageType,
   images: Array<ImageType>,
   accreditors: ?Array<number>,
 };
