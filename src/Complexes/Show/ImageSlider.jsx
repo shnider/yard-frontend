@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import { getImageURL } from './../../utilities';
 import type { ImageType } from './../types';
+import Pluralize from './../Pluralize';
 
 const Images = styled.div`
   display: flex;
@@ -44,7 +45,10 @@ export default ({ images }: Props) =>
     </Images>
     <Grid>
       <ButtonWrapper>
-        <Button>41 фотография</Button>
+        <Button>
+          <span>{`${images.length} `}</span>
+          <Pluralize one="фотография" few="фотографии" oth="фотографий" lot={images.length} />
+        </Button>
       </ButtonWrapper>
     </Grid>
   </div>);
