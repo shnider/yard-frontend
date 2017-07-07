@@ -19,6 +19,7 @@ import Location from './Location';
 import { get } from './../../api';
 import { formatPrice } from './../../utilities';
 import type { ComplexType, LocationType } from '../types';
+/* import { kinds } from '../dictionaries'; */
 
 const Summary = styled.div`
   display: flex;
@@ -70,7 +71,7 @@ class Show extends Component {
   }
 
   render() {
-    const { name, location = {}, images = [], statistics = {} } = this.state;
+    const { name, location = {}, images = [], statistics = {}, details = {} } = this.state;
     const { price = {} } = statistics;
     const { from = {}, to = {} } = price;
 
@@ -82,7 +83,7 @@ class Show extends Component {
           <Grid>
             <Summary>
               <SummaryRecord less="предложений">950</SummaryRecord>
-              <SummaryRecord less="архитектор">John McAslan + Partners</SummaryRecord>
+              <SummaryRecord less="архитектор">{details.architect}</SummaryRecord>
               <SummaryRecord less="застройщик">Группа «ПСН»</SummaryRecord>
             </Summary>
             <Qualities>
@@ -100,7 +101,7 @@ class Show extends Component {
               </Row>
               <Row>
                 <Col lg={4}>
-                  <QualitiesRecord label="Статус:" value="Квартиры" />
+                  <QualitiesRecord label="Статус: " value={statistics.propertiesCount} />
                 </Col>
                 <Col lg={4}>
                   <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
