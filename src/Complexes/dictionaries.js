@@ -1,4 +1,4 @@
-// adding flow in progress!!
+// @flow
 
 export const offerKinds = {
   purchase: 'Покупка',

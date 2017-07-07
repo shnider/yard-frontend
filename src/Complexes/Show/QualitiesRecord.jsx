@@ -16,6 +16,7 @@ const Name = styled.dt`
 
 const Value = styled.dd`
   width: 50%;
+  margin-left: 0;
   font-weight: 500;
   line-height: 1.375rem;
   color: #3e4247;

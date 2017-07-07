@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import type { Children } from 'react';
 
 const Heading = styled.h2`
   padding-top: 4rem;
@@ -15,4 +16,4 @@ const Heading = styled.h2`
   color: #3e4247;
 `;
 
-export default () => <Heading>Предложения в ЖК «Полянка/44»</Heading>;
+export default (props: Children) => <Heading>{props.children}</Heading>;

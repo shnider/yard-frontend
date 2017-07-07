@@ -17,9 +17,9 @@ import Offer from './Offer';
 import Around from './Around';
 import Location from './Location';
 import { get } from './../../api';
-import { formatPrice } from './../../utilities';
+import { formatPrice, formatSquare, fromatCeilHeight, formatParking } from './../../utilities';
 import type { ComplexType, LocationType } from '../types';
-/* import { kinds } from '../dictionaries'; */
+import { kinds, securityKinds, constructionKinds, quarters } from '../dictionaries';
 
 const Summary = styled.div`
   display: flex;
@@ -40,6 +40,7 @@ const Offers = styled.section`
   background-color: #f4f5f9;
   padding-bottom: 4rem;
 `;
+
 
 function formatLocation({ subLocalityName, street, house, postalCode }: LocationType): string {
   const mainLocation = [subLocalityName, street, house].filter(loc => !!loc).join(', ');
@@ -72,8 +73,22 @@ class Show extends Component {
 
   render() {
     const { name, location = {}, images = [], statistics = {}, details = {} } = this.state;
-    const { price = {} } = statistics;
+    const { propertiesCount, price = {}, totalPrimaryArea = {} } = statistics;
     const { from = {}, to = {} } = price;
+    const {
+      architect,
+      constructionKind,
+      startQuarter,
+      startYear,
+      propertyKind,
+      commissioningQuarter,
+      commissioningYear,
+      ceilHeight = {},
+      parkings,
+      undergroundGarages,
+      security,
+      maintenanceCosts,
+    } = details;
 
     return (
       <BodyClassName className="complex">
@@ -83,42 +98,29 @@ class Show extends Component {
           <Grid>
             <Summary>
               <SummaryRecord less="предложений">950</SummaryRecord>
-              <SummaryRecord less="архитектор">{details.architect}</SummaryRecord>
+              <SummaryRecord less="архитектор">{architect}</SummaryRecord>
               <SummaryRecord less="застройщик">Группа «ПСН»</SummaryRecord>
             </Summary>
             <Qualities>
               <Heading>Характеристики</Heading>
               <Row>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
+                  {propertiesCount && <QualitiesRecord label="Колличесвто квартир" value={propertiesCount} />}
+                  {propertyKind && <QualitiesRecord label="Статус" value={kinds[propertyKind]} />}
+                  {price && <QualitiesRecord label="Цены" value={formatPrice(from.rub, to.rub)} />}
+                  {security && <QualitiesRecord label="Безопастность" value={securityKinds[security]} />}
                 </Col>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
+                  {constructionKind && <QualitiesRecord label="Конструкция корпусов" value={constructionKinds[constructionKind]} />}
+                  {totalPrimaryArea && <QualitiesRecord label="Площадь" value={formatSquare(totalPrimaryArea.from, totalPrimaryArea.to)} />}
+                  {totalPrimaryArea && <QualitiesRecord label="Высота потолков" value={fromatCeilHeight(ceilHeight.from, ceilHeight.to)} />}
+                  {ceilHeight && <QualitiesRecord label="Обслуживание" value={`${maintenanceCosts} руб / м² / месяц`} />}
                 </Col>
                 <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
-                </Col>
-              </Row>
-              <Row>
-                <Col lg={4}>
-                  <QualitiesRecord label="Статус: " value={statistics.propertiesCount} />
-                </Col>
-                <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
-                </Col>
-                <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
-                </Col>
-              </Row>
-              <Row>
-                <Col lg={4}>
-                  <QualitiesRecord label="Цены:" value={formatPrice(from.rub, to.rub)} />
-                </Col>
-                <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
-                </Col>
-                <Col lg={4}>
-                  <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />
+                  {security && <QualitiesRecord label="Начало строительства" value={`${quarters[startQuarter]} квартал ${startYear} года`} />}
+                  {security && <QualitiesRecord label="Конец строительства" value={`${quarters[commissioningQuarter]} квартал ${commissioningYear} года`} />}
+                  <QualitiesRecord label="Наземная парковка" value={formatParking(parkings)} />
+                  <QualitiesRecord label="Подземная парковка" value={formatParking(undergroundGarages)} />
                 </Col>
               </Row>
             </Qualities>
@@ -159,7 +161,7 @@ class Show extends Component {
             </Infrastructure>
           </Grid>
           <Offers>
-            <OfferHeading />
+            <OfferHeading>{`Предложения в ${name}`}</OfferHeading>
             <Grid>
               <Row>
                 <Col lg={4}>
