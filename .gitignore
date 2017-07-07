@@ -2,18 +2,21 @@
 
 # dependencies
 /node_modules
+/flow-typed
 
 # testing
 /coverage
 
 # production
 /build
+.vscode/
 
 # node modules
 
 /node_modules
 
 # misc
+.vscode
 .directory
 .DS_Store
 .env.local

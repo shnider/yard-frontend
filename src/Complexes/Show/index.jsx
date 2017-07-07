@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import BodyClassName from 'react-body-classname';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -15,6 +17,8 @@ import Offer from './Offer';
 import Around from './Around';
 import Location from './Location';
 import { get } from './../../api';
+import { formatPrice } from './../../utilities';
+import type { ComplexType, LocationType } from '../types';
 
 const Summary = styled.div`
   display: flex;
@@ -36,33 +40,27 @@ const Offers = styled.section`
   padding-bottom: 4rem;
 `;
 
-function formatLocation(location) {
-  return [location.subLocalityName, location.street, location.house].filter(loc => !!loc).join(', ');
-}
-
-function formatPrice(from, to) {
-  const priceFrom = Math.round(from.rub / 10000000);
-  const priceTo = Math.round(to.rub / 1000000);
-  return `от ${priceFrom} до ${priceTo} млн`;
+function formatLocation({ subLocalityName, street, house }: LocationType) {
+  return [subLocalityName, street, house].filter(loc => !!loc).join(', ');
 }
 
 class Show extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+
+  state = {};
+
+  state: ComplexType;
 
   componentDidMount() {
     this.load(this.props.match.params.id);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     if (nextProps.match.params.id !== this.props.match.params.id) {
       this.load(nextProps.match.params.id);
     }
   }
 
-  load(complexId) {
+  load(complexId: string) {
     get(`/v1/complexes/${complexId}`).then(complex => this.setState(complex));
   }
 
@@ -108,7 +106,7 @@ class Show extends Component {
               </Row>
               <Row>
                 <Col lg={4}>
-                  <QualitiesRecord label="Цены:" value={formatPrice(from, to)} />
+                  <QualitiesRecord label="Цены:" value={formatPrice(from.rub, to.rub)} />
                 </Col>
                 <Col lg={4}>
                   <QualitiesRecord label="Количество квартир:" value={statistics.propertiesCount} />

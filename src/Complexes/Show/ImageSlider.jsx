@@ -1,7 +1,10 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import { getImageURL } from './../../utilities';
+import type { ImageType } from './../types';
 
 const Images = styled.div`
   display: flex;
@@ -32,10 +35,12 @@ const Button = styled.button`
   color: #fff;
 `;
 
-export default props =>
+type Props = { images: Array<ImageType> };
+
+export default ({ images }: Props) =>
   (<div>
     <Images>
-      {props.images.map(image => (<Image src={getImageURL(image)} alt="Slider image" />))}
+      {images.map(image => (<Image src={getImageURL(image.id)} alt="ImageShow" />))}
     </Images>
     <Grid>
       <ButtonWrapper>

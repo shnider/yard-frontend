@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import devlogo from '../../images/compass-development-logo.svg';

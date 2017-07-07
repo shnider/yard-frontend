@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 
@@ -49,7 +51,7 @@ const Button = styled.button`
   color: #fff;
 `;
 
-export default props =>
+export default (props: Object) =>
   (<Card>
     <Title>1-комнатные квартиры</Title>
     <Record>
