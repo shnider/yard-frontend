@@ -16,4 +16,4 @@ const Heading = styled.h2`
   color: #3e4247;
 `;
 
-export default (props: Children) => <Heading>{props.children}</Heading>;
+export default (props: Children) => <Heading>Предложения в ЖК {props.children}</Heading>;

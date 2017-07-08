@@ -161,7 +161,7 @@ class Show extends Component {
             </Infrastructure>
           </Grid>
           <Offers>
-            <OfferHeading>{`Предложения в ${name}`}</OfferHeading>
+            <OfferHeading>{name}</OfferHeading>
             <Grid>
               <Row>
                 <Col lg={4}>
