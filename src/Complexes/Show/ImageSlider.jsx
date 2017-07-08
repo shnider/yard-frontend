@@ -47,7 +47,7 @@ export default ({ images }: Props) =>
       <ButtonWrapper>
         <Button>
           <span>{`${images.length} `}</span>
-          <Pluralize one="фотография" few="фотографии" oth="фотографий" lot={images.length} />
+          <Pluralize one="фотография" few="фотографии" other="фотографий" amount={images.length} />
         </Button>
       </ButtonWrapper>
     </Grid>

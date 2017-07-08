@@ -30,13 +30,13 @@ export function formatParking(places: number) {
   return places ? `${places} м/м` : 'Нет';
 }
 
-export function pluralize(one: string, few: string, oth: string, lot: number) {
-  const number: number = lot % 10;
+export function pluralize(one: string, few: string, other: string, amount: number) {
+  const number: number = amount % 10;
   if (number === 1) {
     return one;
   } else if (number >= 2 && number <= 4) {
     return few;
   }
-  return oth;
+  return other;
 }
 

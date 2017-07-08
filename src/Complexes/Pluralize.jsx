@@ -7,10 +7,10 @@ import { pluralize } from '../utilities';
 type Props = {
   one: string,
   few: string,
-  oth: string,
-  lot: number,
+  other: string,
+  amount: number,
 }
 
-export default ({ one, few, oth, lot }: Props) => (
-  <span>{pluralize(one, few, oth, lot)}</span>
+export default ({ one, few, other, amount }: Props) => (
+  <span>{pluralize(one, few, other, amount)}</span>
 );

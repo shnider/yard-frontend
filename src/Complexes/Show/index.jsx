@@ -68,7 +68,7 @@ class Show extends Component {
   }
 
   load(complexId: string) {
-    get(`/api/v1/complexes/${complexId}`).then(complex => this.setState(complex));
+    get(`/v1/complexes/${complexId}`).then(complex => this.setState(complex));
   }
 
   render() {
@@ -105,10 +105,10 @@ class Show extends Component {
               <Heading>Характеристики</Heading>
               <Row>
                 <Col lg={4}>
-                  {propertiesCount && <QualitiesRecord label="Колличесвто квартир" value={propertiesCount} />}
+                  {propertiesCount && <QualitiesRecord label="Количество квартир" value={propertiesCount} />}
                   {propertyKind && <QualitiesRecord label="Статус" value={kinds[propertyKind]} />}
                   {price && <QualitiesRecord label="Цены" value={formatPrice(from.rub, to.rub)} />}
-                  {security && <QualitiesRecord label="Безопастность" value={securityKinds[security]} />}
+                  {security && <QualitiesRecord label="Безопасность" value={securityKinds[security]} />}
                 </Col>
                 <Col lg={4}>
                   {constructionKind && <QualitiesRecord label="Конструкция корпусов" value={constructionKinds[constructionKind]} />}
