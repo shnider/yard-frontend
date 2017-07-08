@@ -23,7 +23,7 @@ export function fromatCeilHeight(from: number, to: number) {
   if (from === to) {
     return `${Math.round(from * 10) / 10} м`;
   }
-  return `${Math.round(from * 10) / 10}-${Math.round(to * 10) / 10} м`;
+  return `${Math.round(from * 10) / 10} - ${Math.round(to * 10) / 10} м`;
 }
 
 export function formatParking(places: number) {
