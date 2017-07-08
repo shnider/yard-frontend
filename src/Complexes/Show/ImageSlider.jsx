@@ -1,10 +1,12 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
+import Portal from 'react-portal';
+
+import Gallery from './Gallery';
 import { getImageURL } from './../../utilities';
-import type { ImageType } from './../types';
 import Pluralize from './../Pluralize';
 
 const Images = styled.div`
@@ -19,7 +21,6 @@ const Image = styled.img`
 `;
 
 const ButtonWrapper = styled.div`
-  z-index: 1;
   position: absolute;
   margin-top: -3rem;
 `;
@@ -36,19 +37,38 @@ const Button = styled.button`
   color: #fff;
 `;
 
-type Props = { images: Array<ImageType> };
+class ImageSlider extends Component {
+  state = {};
+  
+  openGallery = () => {
+    this.setState({ isOpened: true });
+    console.log(this.state);
+  }
 
-export default ({ images }: Props) =>
-  (<div>
-    <Images>
-      {images.map(image => (<Image src={getImageURL(image)} alt="ImageShow" />))}
-    </Images>
-    <Grid>
-      <ButtonWrapper>
-        <Button>
-          <span>{`${images.length} `}</span>
-          <Pluralize one="фотография" few="фотографии" other="фотографий" amount={images.length} />
-        </Button>
-      </ButtonWrapper>
-    </Grid>
-  </div>);
+  render() {
+    const { images = {} } = this.props;
+
+    return (
+      <div>
+        <Images>
+          {images.map(image => (<Image src={getImageURL(image)} alt="ImageShow" />))}
+        </Images>
+        <Grid>
+          <ButtonWrapper>
+            <Button onClick={this.openGallery}>
+              <span>{`${images.length} `}</span>
+              <Pluralize one="фотография" few="фотографии" other="фотографий" amount={images.length} />
+            </Button>)
+          </ButtonWrapper>
+          <Portal
+            closeOnEsc
+            isOpened={this.state.isOpened}
+          >
+            <Gallery />
+          </Portal>
+        </Grid>
+      </div>);
+  }
+}
+
+export default ImageSlider;

@@ -18,3 +18,8 @@ body {
 .complex {
   background: #fff;
 }
+
+.gallery {
+  overflow-y: hidden;
+  text-align: center;
+}
