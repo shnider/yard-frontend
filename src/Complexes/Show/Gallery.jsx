@@ -1,9 +1,10 @@
-/* eslint: disable */
-
+// @flow
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import BodyClassName from 'react-body-classname';
+
+import { getImageURL } from './../../utilities';
 
 const BackgroundGallery = styled.div`
   display: flex;
@@ -17,24 +18,20 @@ const BackgroundGallery = styled.div`
   background-color: rgba(17,17,17,0.95);
 `;
 const Wrapper = styled.div`
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-top: 4rem;
   margin-botton: 6rem;
+  overflow-y: scroll;
 `;
 
-const ActiveImage = styled.img`
-  width: 948px;
-  height: 500px;
-  background-color: red;
+const Image = styled.img`
+  margin-left: 4rem;
+  margin-right: 4rem;
 `;
 
-const SideImage = styled.img`
-  width: 182px;
-  height: 400px;
-  background-color: #000;
-`;
 
 const Counter = styled.p`
   margin-bottom: 54px;
@@ -45,21 +42,43 @@ const Counter = styled.p`
   color: #a9afb6;
 `;
 
+const PortalExit = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 class Gallery extends Component {
-  state ={};
+
+  state = { activeImage: 0 };
+
+  slideImage(index) {
+    
+    this.setState({ activeImage: index + 1 });
+  }
 
   render() {
+    const images = this.props.children;
+
     return (
       <div>
-        <BodyClassName className="gallery" >
+        <BodyClassName className="modal-gallery" >
           <BackgroundGallery >
-            {this.props.children}
-            <Wrapper >
-              <SideImage />
-              <ActiveImage />
-              <SideImage />
+            <Wrapper>
+              {images.map((image, index) =>
+                (<Image
+                  src={getImageURL(image, 1024)}
+                  alt={index}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    this.slideImage(index);
+                  }}
+                />))}
             </Wrapper>
-            <Counter>Главнй фасад 4/5</Counter>
+            <PortalExit onClick={this.props.closePortal} />
+            <Counter>Главнй фасад {this.state.activeImage}/{images.length}</Counter>
           </BackgroundGallery>
         </BodyClassName>
       </div>);

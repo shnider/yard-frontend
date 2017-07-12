@@ -13,7 +13,7 @@ const Images = styled.div`
   display: flex;
   position: relative;
   justify-content: flex-start;
-  overflow: auto;
+  overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -39,10 +39,9 @@ const Button = styled.button`
 
 class ImageSlider extends Component {
   state = {};
-  
+
   openGallery = () => {
     this.setState({ isOpened: true });
-    console.log(this.state);
   }
 
   render() {
@@ -64,7 +63,7 @@ class ImageSlider extends Component {
             closeOnEsc
             isOpened={this.state.isOpened}
           >
-            <Gallery />
+            <Gallery>{images}</Gallery>
           </Portal>
         </Grid>
       </div>);

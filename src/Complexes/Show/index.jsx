@@ -59,6 +59,7 @@ class Show extends Component {
 
   componentDidMount() {
     this.load(this.props.match.params.id);
+    window.scrollTo(0, 0);
   }
 
   componentWillReceiveProps(nextProps: Object) {

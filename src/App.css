@@ -19,7 +19,7 @@ body {
   background: #fff;
 }
 
-.gallery {
-  overflow-y: hidden;
+.modal-gallery {
+  overflow: hidden;
   text-align: center;
 }
