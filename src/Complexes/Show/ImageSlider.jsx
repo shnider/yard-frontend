@@ -50,9 +50,7 @@ class ImageSlider extends Component {
   state = {};
 
   openGallery(index: number) {
-    console.log(index);
     const defaultIndex: number = index || 0;
-    console.log(defaultIndex);
     this.setState({
       isOpened: true,
       indexOnClick: defaultIndex,
@@ -78,7 +76,12 @@ class ImageSlider extends Component {
         </Images>
         <Grid>
           <ButtonWrapper>
-            <Button onClick={this.openGallery}>
+            <Button
+              onClick={(e) => {
+                e.stopPropagation();
+                this.openGallery(0);
+              }}
+            >
               <span>{`${images.length} `}</span>
               <Pluralize one="фотография" few="фотографии" other="фотографий" amount={images.length} />
             </Button>
