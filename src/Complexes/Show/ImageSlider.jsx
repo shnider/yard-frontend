@@ -14,15 +14,24 @@ const Images = styled.div`
   position: relative;
   justify-content: flex-start;
   overflow: hidden;
+
 `;
 
 const Image = styled.img`
   height: 25rem;
+  opacity: 0.92; 
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1; 
+  }
 `;
 
 const ButtonWrapper = styled.div`
   position: absolute;
   margin-top: -3rem;
+
 `;
 
 const Button = styled.button`
@@ -40,8 +49,14 @@ const Button = styled.button`
 class ImageSlider extends Component {
   state = {};
 
-  openGallery = () => {
-    this.setState({ isOpened: true });
+  openGallery(index: number) {
+    console.log(index);
+    const defaultIndex: number = index || 0;
+    console.log(defaultIndex);
+    this.setState({
+      isOpened: true,
+      indexOnClick: defaultIndex,
+    });
   }
 
   render() {
@@ -50,7 +65,16 @@ class ImageSlider extends Component {
     return (
       <div>
         <Images>
-          {images.map(image => (<Image src={getImageURL(image)} alt="ImageShow" />))}
+          {images.map((image, index) =>
+          (<Image
+            src={getImageURL(image)}
+            alt="ImageShow"
+            onClick={(e) => {
+              e.stopPropagation();
+              this.openGallery(index);
+            }}
+          />
+          ))}
         </Images>
         <Grid>
           <ButtonWrapper>
@@ -63,7 +87,7 @@ class ImageSlider extends Component {
             closeOnEsc
             isOpened={this.state.isOpened}
           >
-            <Gallery>{images}</Gallery>
+            <Gallery index={this.state.indexOnClick}>{images}</Gallery>
           </Portal>
         </Grid>
       </div>);

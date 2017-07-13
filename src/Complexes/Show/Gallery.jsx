@@ -42,7 +42,15 @@ const Counter = styled.p`
 
 class Gallery extends Component {
 
-  state = { activeImage: 0 };
+  state = {
+    activeImage: 0,
+  };
+
+  componentDidMount() {
+    if (this.props.index !== 0) {
+      this.slideImage(this.props.index);
+    }
+  }
 
   getTransform(index: number): Object {
     const offset = -100 * this.state.activeImage;
