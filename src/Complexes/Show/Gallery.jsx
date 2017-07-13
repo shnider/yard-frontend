@@ -9,54 +9,61 @@ import { getImageURL } from './../../utilities';
 const BackgroundGallery = styled.div`
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(17,17,17,0.95);
+  text-align: center;
 `;
 const Wrapper = styled.div`
-  z-index: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   margin-top: 4rem;
-  margin-botton: 6rem;
-  overflow-y: scroll;
+  margin-bottom: 1.5rem;
+  height: 90vh;
 `;
 
 const Image = styled.img`
-  margin-left: 4rem;
-  margin-right: 4rem;
+  max-width: 100%;
+  max-height: 100%;
+  transition: all 0.3s;
+  transform-origin: bottom;
 `;
 
 
 const Counter = styled.p`
-  margin-bottom: 54px;
+  margin-bottom: 3.25rem;
   padding: 0;
-  font-family: "Fira Sans", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   color: #a9afb6;
-`;
-
-const PortalExit = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 `;
 
 class Gallery extends Component {
 
   state = { activeImage: 0 };
 
-  slideImage(index) {
-    
-    this.setState({ activeImage: index + 1 });
+  getTransform(index: number): Object {
+    const offset = -100 * this.state.activeImage;
+    if (index === this.state.activeImage) {
+      return {
+        transform: `translate(calc(50vw - 50% + ${offset}%))`,
+      };
+    } else if (index > this.state.activeImage) {
+      return {
+        transform: `translate(calc(50vw - 50% + ${offset}%)) scale(0.8)`,
+        opacity: 0.5,
+      };
+    }
+    return {
+      transform: `translate(calc(50vw - 50% + ${offset}%)) scale(0.8)`,
+      opacity: 0.5,
+    };
+  }
+
+  slideImage(index: number) {
+    this.setState({ activeImage: index });
   }
 
   render() {
@@ -65,20 +72,20 @@ class Gallery extends Component {
     return (
       <div>
         <BodyClassName className="modal-gallery" >
-          <BackgroundGallery >
+          <BackgroundGallery onClick={this.props.closePortal}>
             <Wrapper>
               {images.map((image, index) =>
                 (<Image
                   src={getImageURL(image, 1024)}
                   alt={index}
+                  style={this.getTransform(index)}
                   onClick={(e) => {
                     e.stopPropagation();
                     this.slideImage(index);
                   }}
                 />))}
             </Wrapper>
-            <PortalExit onClick={this.props.closePortal} />
-            <Counter>Главнй фасад {this.state.activeImage}/{images.length}</Counter>
+            <Counter>Главнй фасад {this.state.activeImage + 1}/{images.length}</Counter>
           </BackgroundGallery>
         </BodyClassName>
       </div>);

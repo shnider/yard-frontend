@@ -57,7 +57,7 @@ class ImageSlider extends Component {
             <Button onClick={this.openGallery}>
               <span>{`${images.length} `}</span>
               <Pluralize one="фотография" few="фотографии" other="фотографий" amount={images.length} />
-            </Button>)
+            </Button>
           </ButtonWrapper>
           <Portal
             closeOnEsc
