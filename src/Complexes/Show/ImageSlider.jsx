@@ -19,12 +19,10 @@ const Images = styled.div`
 
 const Image = styled.img`
   height: 25rem;
-  opacity: 0.92; 
   transition: all 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;
-    opacity: 1; 
   }
 `;
 

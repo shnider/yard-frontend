@@ -47,9 +47,14 @@ class Gallery extends Component {
   };
 
   componentDidMount() {
+    window.addEventListener('keydown', this.handlerArrowKey);
     if (this.props.index !== 0) {
       this.slideImage(this.props.index);
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handlerArrowKey);
   }
 
   getTransform(index: number): Object {
@@ -72,6 +77,16 @@ class Gallery extends Component {
 
   slideImage(index: number) {
     this.setState({ activeImage: index });
+  }
+
+  handlerArrowKey = (e: Event) => {
+    const lastIndex = this.props.children.length - 1;
+    e.stopPropagation();
+    if (e.keyCode === 37 && this.state.activeImage > 0) {
+      this.slideImage(this.state.activeImage - 1);
+    } else if (e.keyCode === 39 && this.state.activeImage < lastIndex) {
+      this.slideImage(this.state.activeImage + 1);
+    }
   }
 
   render() {
