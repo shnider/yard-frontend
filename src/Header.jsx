@@ -3,6 +3,8 @@
 import React from 'react';
 import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import logo from './images/compass-logo.svg';
 
 const Header = styled.header`
@@ -13,6 +15,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 
 const CompassLogo = styled.img`
   height: auto;
@@ -37,7 +40,7 @@ export default () =>
   (<Header>
     <Grid>
       <Wrapper>
-        <CompassLogo src={logo} alt="Compas" />
+        <Link to={'/'}><CompassLogo src={logo} alt="Compas" /></Link>
         <Navigation>
           <NavLink href="">Купить</NavLink>
           <NavLink href="">Снять</NavLink>
