@@ -10,6 +10,7 @@ const BackgroundGallery = styled.div`
   display: flex;
   flex-flow: column;
   position: fixed;
+  justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
@@ -17,6 +18,7 @@ const BackgroundGallery = styled.div`
   height: 100%;
   background-color: rgba(17,17,17,0.95);
   text-align: center;
+  overflow: hidden;
 `;
 
 const Wrapper = styled.div`
@@ -25,18 +27,23 @@ const Wrapper = styled.div`
   margin-bottom: 1.5rem;
   padding-top: 4rem;
   width: 100%;
+  height: 90vh;
 
   @media (max-width: 786px) {
     padding-top: 1rem;
+  }
+
+  @media (max-width: 990px) {
+    height: auto;
   }
   
 `;
 
 const Image = styled.img`
   max-width: 100%;
-  max-height: 80%;
+  max-height: 100%;
   transition: all 0.3s;
-  transform-origin: bottom;
+  transform-origin: center bottom;
 `;
 
 
@@ -46,6 +53,10 @@ const Counter = styled.p`
   font-size: 1rem;
   font-weight: 300;
   color: #a9afb6;
+
+  @media (max-height: 440px) {
+    margin-bottom: 1.5rem;
+  }
 
 `;
 
@@ -74,7 +85,7 @@ class Gallery extends Component {
   getTransform(index: number): Object {
     const { active, windowWidth } = this.state;
     const offset = -100 * active;
-    const size = windowWidth <= 990 ? this.getSlideSize(index) : { width: '60%', height: '100%' };
+    const size = windowWidth <= 990 ? this.getSlideSize(index) : { width: '100%', height: '100%' };
     const space = windowWidth <= 990 ? '1rem' : '4rem';
     if (index === active) {
       return {
@@ -100,9 +111,10 @@ class Gallery extends Component {
 
   getSlideSize(index: number): {width: number, height: number } {
     const { windowWidth } = this.state;
+    const scale = windowWidth <= 440 ? 0.8 : 0.7;
     const image = this.props.children[index];
     const aspectRatio = image.width / image.height;
-    const width = Math.round(windowWidth * 0.7);
+    const width = Math.round(windowWidth * scale);
     const height = Math.round(width / aspectRatio);
     return { width, height };
   }
