@@ -19,10 +19,11 @@ const Images = styled.div`
 
 const Image = styled.img`
   height: 25rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s linear;
 
   &:hover {
     cursor: pointer;
+    opacity: 0.85;
   }
 `;
 
@@ -48,10 +49,9 @@ class ImageSlider extends Component {
   state = {};
 
   openGallery(index: number) {
-    const defaultIndex: number = index || 0;
     this.setState({
       isOpened: true,
-      indexOnClick: defaultIndex,
+      indexOnClick: index,
     });
   }
 
@@ -65,8 +65,7 @@ class ImageSlider extends Component {
           (<Image
             src={getImageURL(image)}
             alt="ImageShow"
-            onClick={(e) => {
-              e.stopPropagation();
+            onClick={() => {
               this.openGallery(index);
             }}
           />
@@ -75,10 +74,7 @@ class ImageSlider extends Component {
         <Grid>
           <ButtonWrapper>
             <Button
-              onClick={(e) => {
-                e.stopPropagation();
-                this.openGallery(0);
-              }}
+              onClick={() => { this.openGallery(0); }}
             >
               <span>{`${images.length} `}</span>
               <Pluralize one="фотография" few="фотографии" other="фотографий" amount={images.length} />
