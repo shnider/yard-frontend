@@ -10,10 +10,11 @@ const BackgroundGallery = styled.div`
   display: flex;
   flex-flow: column;
   position: fixed;
+  align-items: center;
   top: 0;
   left: 0;
-  max-height: 100vh;
-  max-width: 100vw;
+  width: 100%;
+  height: 100%;
   background-color: rgba(17,17,17,0.95);
   text-align: center;
 `;
@@ -23,7 +24,9 @@ const Wrapper = styled.div`
   align-content: flex-end;
   margin-bottom: 1.5rem;
   padding-top: 4rem;
-  @media (max-height: 768px) {
+  width: 100%;
+
+  @media (max-width: 786px) {
     padding-top: 1rem;
   }
   
