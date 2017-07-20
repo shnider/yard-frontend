@@ -12,13 +12,15 @@ const BackgroundGallery = styled.div`
   position: fixed;
   justify-content: center;
   align-items: center;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  max-width: 100%;
+  max-height: 100%;
   height: 100%;
   background-color: rgba(17,17,17,0.95);
   text-align: center;
   overflow: hidden;
+  padding: 0;
 `;
 
 const Wrapper = styled.div`
@@ -28,9 +30,11 @@ const Wrapper = styled.div`
   padding-top: 4rem;
   width: 100%;
   height: 90vh;
+  overflow: hidden;
 
   @media (max-width: 786px) {
-    padding-top: 1rem;
+    margin: 1rem 0;
+    padding: 0;
   }
 
   @media (max-width: 990px) {
@@ -40,10 +44,10 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
   transition: all 0.3s;
   transform-origin: center bottom;
+  width: auto;
+  height: 78vh;
 `;
 
 
@@ -65,12 +69,10 @@ class Gallery extends Component {
   state = {
     active: 0,
     windowWidth: 0,
-    windowHeight: 0,
   };
 
   componentDidMount() {
     this.getWindowSize();
-    window.addEventListener('resize', this.getWindowSize);
     window.addEventListener('keydown', this.handlerArrowKey);
     if (this.props.index !== 0) {
       this.slideImage(this.props.index);
@@ -79,48 +81,30 @@ class Gallery extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handlerArrowKey);
-    window.removeEventListener('resize', this.getWindowSize);
   }
 
   getTransform(index: number): Object {
     const { active, windowWidth } = this.state;
     const offset = -100 * active;
-    const size = windowWidth <= 990 ? this.getSlideSize(index) : { width: '100%', height: '100%' };
-    const space = windowWidth <= 990 ? '1rem' : '4rem';
+    const space = windowWidth <= 1024 ? '1rem' : '4rem';
     if (index === active) {
       return {
         transform: `translate(calc(50vw - 50% + ${offset}%))`,
-        width: size.width,
-        height: size.height,
       };
     } else if (index > active) {
       return {
         transform: `translate(calc(50vw - 50% + ${offset}% + ${space})) scaleY(0.8)`,
         opacity: 0.5,
-        width: size.width,
-        height: size.height,
       };
     }
     return {
       transform: `translate(calc(50vw - 50% + ${offset}% - ${space})) scaleY(0.8)`,
       opacity: 0.5,
-      width: size.width,
-      height: size.height,
     };
   }
 
-  getSlideSize(index: number): {width: number, height: number } {
-    const { windowWidth } = this.state;
-    const scale = windowWidth <= 440 ? 0.8 : 0.7;
-    const image = this.props.children[index];
-    const aspectRatio = image.width / image.height;
-    const width = Math.round(windowWidth * scale);
-    const height = Math.round(width / aspectRatio);
-    return { width, height };
-  }
-
   getWindowSize = () => {
-    this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight });
+    this.setState({ windowWidth: window.innerWidth });
   }
 
   slideImage(index: number) {
