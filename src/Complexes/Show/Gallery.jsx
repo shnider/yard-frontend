@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import BodyClassName from 'react-body-classname';
 
+import media from './../../style';
 import { getImageURL } from './../../utilities';
+
 
 const BackgroundGallery = styled.div`
   display: flex;
@@ -14,6 +16,7 @@ const BackgroundGallery = styled.div`
   align-items: center;
   top: 0px;
   bottom: 0px;
+  width: 100%;
   max-width: 100%;
   max-height: 100%;
   height: 100%;
@@ -25,43 +28,43 @@ const BackgroundGallery = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  align-content: flex-end;
+  align-items: flex-end;
   margin-bottom: 1.5rem;
-  padding-top: 4rem;
+  margin-top: 4rem;
   width: 100%;
-  height: 90vh;
   overflow: hidden;
-
-  @media (max-width: 786px) {
-    margin: 1rem 0;
-    padding: 0;
-  }
-
-  @media (max-width: 990px) {
-    height: auto;
-  }
   
+  ${media.tablet`
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  `}
 `;
 
 const Image = styled.img`
   transition: all 0.3s;
   transform-origin: center bottom;
-  width: auto;
-  height: 78vh;
+
+
+  ${media.tablet`
+    max-height: 90%;
+    max-width: 80%;
+  `}
+
+  
 `;
 
 
 const Counter = styled.p`
-  margin-bottom: 3.25rem;
+  margin-bottom: 2.5rem;
   padding: 0;
   font-size: 1rem;
   font-weight: 300;
   color: #a9afb6;
 
-  @media (max-height: 440px) {
-    margin-bottom: 1.5rem;
-  }
-
+  ${media.mobile`
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+  `}
 `;
 
 class Gallery extends Component {
