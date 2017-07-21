@@ -3,28 +3,36 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import media from './../../style';
+
 const Section = styled.section`
   text-align: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
+
+  ${media.mobile`
+    margin: 2rem 0;
+  `}
 `;
 
 const Heading = styled.h2`
-  margin-bottom: 0.5rem;
   font-weight: bold;
   font-size: 1.5rem;
+  line-height: 2rem;
   color: #3e4247;
+
+  ${media.mobile`
+    font-size: 1.25rem;
+  `}
 `;
 
 const Text = styled.p`
-  margin-bottom: 1rem;
   line-height: 1.5rem;
   color: #3e4247;
 `;
 
 const ButtonWrapper = styled.div`
   text-align: center;
-  margin-top: 1.5rem;
 `;
 
 const Button = styled.button`
@@ -43,7 +51,7 @@ export default () =>
     <Heading>Discover Our New Developments</Heading>
     <Text>
       Compass brings a modern approach to new development marketing and sales.
-      From boutique rental <br /> conversions to luxurious ground-up
+      From boutique rental  conversions to luxurious ground-up
       condominiums, browse our portfolio of current offerings.
     </Text>
     <ButtonWrapper>

@@ -6,6 +6,7 @@ import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import BodyClassName from 'react-body-classname';
 
+import media from './../../style';
 import CompassDevelopmentLogo from './CompassDevelopmentLogo';
 import Introduction from './Introduction';
 import Card from './Card';
@@ -15,6 +16,15 @@ import type { ComplexType, LocationType } from '../types';
 
 const Cards = styled.section`
   margin-bottom: 6rem;
+   ${media.tablet`
+    margin-bottom: 4rem;
+  `}
+`;
+
+const Wrapper = styled.div`
+  ${media.tablet`
+    margin: 0 1rem;
+  `}
 `;
 
 function formatLocation(location: LocationType) {
@@ -37,7 +47,7 @@ class List extends Component {
   render() {
     return (
       <BodyClassName className="complexes">
-        <div>
+        <Wrapper>
           <CompassDevelopmentLogo />
           <Introduction />
           <Cards>
@@ -55,7 +65,7 @@ class List extends Component {
               )}
             </Grid>
           </Cards>
-        </div>
+        </Wrapper>
       </BodyClassName>
     );
   }

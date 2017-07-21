@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import type { Children } from 'react';
 
+import media from './../../style';
+
 const Card = styled(Link)`
   display: flex;
   margin-bottom: 3rem;
@@ -15,33 +17,56 @@ const Card = styled(Link)`
   &:hover{
     box-shadow: 0 0 1.025rem 0px rgba(0, 0, 0, .3);
   }
+
+  ${media.tablet`
+    display: block;
+    margin-bottom: 2rem;
+  `}
+
 `;
 
 const Image = styled.img`
   width: 484px;
   height: 350px;
   object-fit: cover;
+
+  @media (max-width: 990px) {
+    width: 100%;
+    height: auto;
+  }
+
 `;
 
 const Contetnt = styled.div`
   display: flex;
   flex-flow: column;
   padding: 1.5rem 2rem;
+
+  ${media.tablet`
+    padding: 1rem 1rem 1.5rem 1rem;
+  `}
 `;
 
 const Location = styled.p`
   margin: 0;
   text-transform: uppercase;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
+  line-height: 1.25rem;
   color: #646971;
 `;
 
 const Heading = styled.h3`
   margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 2.5rem;
   line-height: 3.5rem;
   color: #000;
+
+  ${media.tablet`
+    font-size: 2rem;
+    line-height: 2.5rem;
+  `}
+
 `;
 
 const Text = styled.p`

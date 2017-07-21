@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import logo from './images/compass-logo.svg';
+import media from './style';
 
 const Header = styled.header`
   background-color: #fff;
@@ -14,6 +15,10 @@ const Header = styled.header`
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${media.tablet`
+    margin: 0 1rem;
+  `}
 `;
 
 
@@ -22,11 +27,20 @@ const CompassLogo = styled.img`
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   object-fit: contain;
+
+  ${media.tablet`
+    margin: 1rem 0;
+    height: 1rem;
+  `}
 `;
 
 const Navigation = styled.nav`
   margin: 1.5rem 0;
   line-height: 1rem;
+
+  ${media.mobile`
+    display: none;
+  `}
 `;
 
 const NavLink = styled.a`

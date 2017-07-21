@@ -10,6 +10,10 @@ const Section = styled.section`
   padding: 5rem 0;
   background-color: #161616;
   margin-bottom: 0;
+  
+  @media (max-width: 440px) {
+    display: none;
+  }
 `;
 
 export default () =>
