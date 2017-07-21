@@ -2,6 +2,8 @@
 
 import React from 'react';
 import styled from 'styled-components';
+
+import media from './../../style';
 import devlogo from '../../images/compass-development-logo.svg';
 
 const Section = styled.section`
@@ -10,10 +12,10 @@ const Section = styled.section`
   padding: 5rem 0;
   background-color: #161616;
   margin-bottom: 0;
-  
-  @media (max-width: 440px) {
+
+  ${media.tablet`
     display: none;
-  }
+  `}
 `;
 
 export default () =>

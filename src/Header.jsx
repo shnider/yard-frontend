@@ -41,6 +41,10 @@ const Navigation = styled.nav`
   ${media.mobile`
     display: none;
   `}
+
+  ${media.tablet`
+    margin: 1rem 0;
+  `}
 `;
 
 const NavLink = styled.a`
@@ -48,6 +52,9 @@ const NavLink = styled.a`
   font-size: 1rem;
   color: #3e4247;
   text-decoration: none;
+
+  ${media.tablet`
+  `}
 `;
 
 export default () =>
