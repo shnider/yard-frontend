@@ -2,18 +2,18 @@
 import { css } from 'styled-components';
 
 const media = {
-  desktop: (...args) => css`
-    @media (max-width: 1120px) {
+  large: (...args: any) => css`
+    @media (min-width: 1120px) {
       ${css(...args)}
     }
   `,
-  tablet: (...args) => css`
-    @media (max-width: 990px) {
+  desktop: (...args: any) => css`
+    @media (min-width: 990px) {
       ${css(...args)}
     }
   `,
-  mobile: (...args) => css`
-    @media (max-width: 440px) {
+  tablet: (...args: any) => css`
+    @media (min-width: 440px) {
       ${css(...args)}
     }
   `,

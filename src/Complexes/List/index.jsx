@@ -15,15 +15,16 @@ import { getImageURL } from './../../utilities';
 import type { ComplexType, LocationType } from '../types';
 
 const Cards = styled.section`
-  margin-bottom: 6rem;
-   ${media.tablet`
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
+   ${media.desktop`
+    margin-bottom: 6rem;
   `}
 `;
 
 const Wrapper = styled.div`
-  ${media.tablet`
-    margin: 0 1rem;
+  margin: 0 1rem;
+  ${media.desktop`
+    margin: 0;
   `}
 `;
 

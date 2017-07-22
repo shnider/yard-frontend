@@ -13,37 +13,34 @@ const Header = styled.header`
 `;
 
 const Wrapper = styled.div`
+  margin: 0 1rem;
   display: flex;
   justify-content: space-between;
 
-  ${media.tablet`
-    margin: 0 1rem;
+  ${media.desktop`
+    margin: 0;
   `}
 `;
 
 
 const CompassLogo = styled.img`
-  height: auto;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin: 1rem 0;
+  height: 1rem;
   object-fit: contain;
 
-  ${media.tablet`
-    margin: 1rem 0;
-    height: 1rem;
+  ${media.desktop`
+    height: auto;
+    margin: 1.25rem 0;
   `}
 `;
 
 const Navigation = styled.nav`
+  display: none;
   margin: 1.5rem 0;
   line-height: 1rem;
 
-  ${media.mobile`
-    display: none;
-  `}
-
-  ${media.tablet`
-    margin: 1rem 0;
+  ${media.desktop`
+    display: block;
   `}
 `;
 

@@ -12,8 +12,9 @@ const Footer = styled.footer`
 `;
 
 const Wrapper = styled.div`
-  ${media.tablet`
-    margin: 0 1rem;
+  margin: 0 1rem;
+  ${media.desktop`
+    margin: 0;
   `}
 `;
 

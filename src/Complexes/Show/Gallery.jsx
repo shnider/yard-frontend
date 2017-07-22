@@ -61,7 +61,7 @@ const Counter = styled.p`
   font-weight: 300;
   color: #a9afb6;
 
-  ${media.mobile`
+  ${media.tablet`
     margin-top: 0.5rem;
     margin-bottom: 0rem;
   `}

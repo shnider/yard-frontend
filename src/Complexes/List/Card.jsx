@@ -8,8 +8,8 @@ import type { Children } from 'react';
 import media from './../../style';
 
 const Card = styled(Link)`
-  display: flex;
-  margin-bottom: 3rem;
+  display: block;
+  margin-bottom: 2rem;
   background: #fff;
   text-decoration: none;
   border-bottom: solid 2px #646971;
@@ -18,9 +18,9 @@ const Card = styled(Link)`
     box-shadow: 0 0 1.025rem 0px rgba(0, 0, 0, .3);
   }
 
-  ${media.tablet`
-    display: block;
-    margin-bottom: 2rem;
+  ${media.desktop`
+    display: flex;
+    margin-bottom: 3rem;
   `}
 
 `;
@@ -39,11 +39,11 @@ const Image = styled.img`
 
 const Contetnt = styled.div`
   display: flex;
-  flex-flow: column;
-  padding: 1.5rem 2rem;
+  flex-flow: column;  
+  padding: 1rem 1rem 1.5rem 1rem;
 
-  ${media.tablet`
-    padding: 1rem 1rem 1.5rem 1rem;
+  ${media.desktop`
+    padding: 1.5rem 2rem;
   `}
 `;
 
@@ -58,13 +58,13 @@ const Location = styled.p`
 const Heading = styled.h3`
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  font-size: 2.5rem;
-  line-height: 3.5rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   color: #000;
 
-  ${media.tablet`
-    font-size: 2rem;
-    line-height: 2.5rem;
+  ${media.desktop`
+    font-size: 2.5rem;
+    line-height: 3.5rem;
   `}
 
 `;
