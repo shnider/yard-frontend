@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import media from './../../style';
+import { media } from './../../utilities';
 import devlogo from '../../images/compass-development-logo.svg';
 
 const Section = styled.section`

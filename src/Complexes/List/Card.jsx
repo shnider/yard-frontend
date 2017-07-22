@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import type { Children } from 'react';
 
-import media from './../../style';
+import { media } from './../../utilities';
 
 const Card = styled(Link)`
   display: block;

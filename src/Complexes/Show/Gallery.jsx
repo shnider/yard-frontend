@@ -4,8 +4,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import BodyClassName from 'react-body-classname';
 
-import media from './../../style';
-import { getImageURL } from './../../utilities';
+import { getImageURL, media } from './../../utilities';
 
 
 const BackgroundGallery = styled.div`

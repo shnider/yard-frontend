@@ -1,4 +1,5 @@
 // @flow
+import { css } from 'styled-components';
 
 import type { ImageType } from './Complexes/types';
 
@@ -40,3 +41,20 @@ export function pluralize(one: string, few: string, other: string, amount: numbe
   return other;
 }
 
+export const media = {
+  large: (...args: any) => css`
+    @media (min-width: 1120px) {
+      ${css(...args)}
+    }
+  `,
+  desktop: (...args: any) => css`
+    @media (min-width: 990px) {
+      ${css(...args)}
+    }
+  `,
+  tablet: (...args: any) => css`
+    @media (min-width: 440px) {
+      ${css(...args)}
+    }
+  `,
+};

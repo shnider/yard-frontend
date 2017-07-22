@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import logo from './images/compass-logo.svg';
-import media from './style';
+import { media } from './utilities';
 
 const Header = styled.header`
   background-color: #fff;

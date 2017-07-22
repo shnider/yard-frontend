@@ -4,7 +4,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 
-import media from './../../style';
+import { media } from './../../utilities';
 
 const Section = styled.section`
   margin: 2rem 0;
