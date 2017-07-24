@@ -59,11 +59,6 @@ const Counter = styled.p`
   font-size: 1rem;
   font-weight: 300;
   color: #a9afb6;
-
-  ${media.tablet`
-    margin-top: 0.5rem;
-    margin-bottom: 0rem;
-  `}
 `;
 
 class Gallery extends Component {
