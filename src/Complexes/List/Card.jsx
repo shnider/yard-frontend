@@ -25,15 +25,15 @@ const Card = styled(Link)`
 
 `;
 
-const Image = styled.img`
-  width: 484px;
-  height: 350px;
+const Image = styled.img`  
+  width: 100%;
+  height: auto;
   object-fit: cover;
 
-  @media (max-width: 990px) {
-    width: 100%;
-    height: auto;
-  }
+  ${media.desktop`
+    width: 484px;
+    height: 350px;
+  `}
 
 `;
 
