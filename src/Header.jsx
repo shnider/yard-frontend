@@ -6,27 +6,42 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import logo from './images/compass-logo.svg';
+import { media } from './utilities';
 
 const Header = styled.header`
   background-color: #fff;
 `;
 
 const Wrapper = styled.div`
+  margin: 0 1rem;
   display: flex;
   justify-content: space-between;
+
+  ${media.desktop`
+    margin: 0;
+  `}
 `;
 
 
 const CompassLogo = styled.img`
-  height: auto;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  margin: 1rem 0;
+  height: 1rem;
   object-fit: contain;
+
+  ${media.desktop`
+    height: auto;
+    margin: 1.25rem 0;
+  `}
 `;
 
 const Navigation = styled.nav`
+  display: none;
   margin: 1.5rem 0;
   line-height: 1rem;
+
+  ${media.desktop`
+    display: block;
+  `}
 `;
 
 const NavLink = styled.a`
@@ -34,6 +49,9 @@ const NavLink = styled.a`
   font-size: 1rem;
   color: #3e4247;
   text-decoration: none;
+
+  ${media.tablet`
+  `}
 `;
 
 export default () =>
