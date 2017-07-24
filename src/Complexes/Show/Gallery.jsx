@@ -4,8 +4,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import BodyClassName from 'react-body-classname';
 
-import media from './../../style';
-import { getImageURL } from './../../utilities';
+import { getImageURL, media } from './../../utilities';
 
 
 const BackgroundGallery = styled.div`
@@ -29,28 +28,26 @@ const BackgroundGallery = styled.div`
 const Wrapper = styled.div`
   display: flex;
   align-items: flex-end;
-  margin-bottom: 1.5rem;
   width: 100%;
   overflow: hidden;
-  
-  ${media.tablet`
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+
+  ${media.desktop`
+    margin-bottom: 1.5rem;
   `}
 `;
 
 const Image = styled.img`
   transition: all 0.3s;
-  transform-origin: center bottom;
-  max-height: 70vh;
+  transform-origin: bottom;
+  max-height: 80vh;
   max-width: 80vw;
 `;
 
 
-const Counter = styled.p`
-  margin-bottom: 2.5rem;
+const ImageInfo = styled.p`
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
   padding: 0;
-  font-size: 1rem;
   font-weight: 300;
   color: #a9afb6;
 `;
@@ -130,7 +127,7 @@ class Gallery extends Component {
                   }}
                 />))}
             </Wrapper>
-            <Counter>Главнй фасад {this.state.active + 1}/{images.length}</Counter>
+            <ImageInfo>Главнй фасад {this.state.active + 1}/{images.length}</ImageInfo>
           </BackgroundGallery>
         </BodyClassName>
       </div>);
