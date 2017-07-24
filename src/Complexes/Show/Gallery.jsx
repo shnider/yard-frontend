@@ -30,7 +30,6 @@ const Wrapper = styled.div`
   display: flex;
   align-items: flex-end;
   margin-bottom: 1.5rem;
-  margin-top: 4rem;
   width: 100%;
   overflow: hidden;
   
@@ -43,14 +42,8 @@ const Wrapper = styled.div`
 const Image = styled.img`
   transition: all 0.3s;
   transform-origin: center bottom;
-
-
-  ${media.tablet`
-    max-height: 90%;
-    max-width: 80%;
-  `}
-
-  
+  max-height: 70vh;
+  max-width: 80vw;
 `;
 
 
@@ -60,11 +53,6 @@ const Counter = styled.p`
   font-size: 1rem;
   font-weight: 300;
   color: #a9afb6;
-
-  ${media.mobile`
-    margin-top: 0.5rem;
-    margin-bottom: 0rem;
-  `}
 `;
 
 class Gallery extends Component {
@@ -89,19 +77,19 @@ class Gallery extends Component {
   getTransform(index: number): Object {
     const { active, windowWidth } = this.state;
     const offset = -100 * active;
-    const space = windowWidth <= 1024 ? '1rem' : '4rem';
+    const space = windowWidth <= 1024 ? '-1rem' : '1rem';
     if (index === active) {
       return {
         transform: `translate(calc(50vw - 50% + ${offset}%))`,
       };
     } else if (index > active) {
       return {
-        transform: `translate(calc(50vw - 50% + ${offset}% + ${space})) scaleY(0.8)`,
+        transform: `translate(calc(50vw - 50% + ${offset}% + ${space})) scale(0.8)`,
         opacity: 0.5,
       };
     }
     return {
-      transform: `translate(calc(50vw - 50% + ${offset}% - ${space})) scaleY(0.8)`,
+      transform: `translate(calc(50vw - 50% + ${offset}% - ${space})) scale(0.8)`,
       opacity: 0.5,
     };
   }
@@ -116,7 +104,6 @@ class Gallery extends Component {
 
   handlerArrowKey = (e: Event) => {
     const last = this.props.children.length - 1;
-    e.stopPropagation();
     if (e.keyCode === 37 && this.state.active > 0) {
       this.slideImage(this.state.active - 1);
     } else if (e.keyCode === 39 && this.state.active < last) {
