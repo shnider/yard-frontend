@@ -38,7 +38,7 @@ const Wrapper = styled.div`
 
 const Image = styled.img`
   transition: all 0.3s;
-  transform-origin: bottom;
+  transform-origin: center bottom;
   max-height: 80vh;
   max-width: 80vw;
 `;
@@ -54,19 +54,23 @@ const ImageInfo = styled.p`
 
 function getTransform(index: number, active: number): Object {
   const offset = -100 * active;
-  const space = window.innerWidth < 992 ? -1 : 1;
+  const breakpoint = 992; // px
+  const windowWidth = window.innerWidth;
+  const imageInterval = windowWidth < breakpoint ? -1 : 1;
+  // '50vw - 50%' - get center of window due to windowWidth
+  const imageShift = `50vw - 50% + ${offset}%`;
   if (index === active) {
     return {
-      transform: `translate(calc(50vw - 50% + ${offset}%))`,
+      transform: `translate(calc(${imageShift}))`,
     };
   } else if (index > active) {
     return {
-      transform: `translate(calc(50vw - 50% + ${offset}% + ${space}rem)) scale(0.8)`,
+      transform: `translate(calc(${imageShift} + ${imageInterval}rem)) scale(0.8)`,
       opacity: 0.5,
     };
   }
   return {
-    transform: `translate(calc(50vw - 50% + ${offset}% - ${space}rem)) scale(0.8)`,
+    transform: `translate(calc(${imageShift} - ${imageInterval}rem)) scale(0.8)`,
     opacity: 0.5,
   };
 }
