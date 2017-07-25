@@ -37,7 +37,7 @@ const Image = styled.img`
 
 `;
 
-const Contetnt = styled.div`
+const Content = styled.div`
   display: flex;
   flex-flow: column;  
   padding: 1rem 1rem 1.5rem 1rem;
@@ -87,7 +87,7 @@ type CardProps = {
 export default (props: CardProps) =>
   (<Card to={`/complexes/${props.id}`}>
     <Image src={props.imgSrc} alt={props.imgAlt} />
-    <Contetnt>
+    <Content>
       <Location>
         {props.location}
       </Location>
@@ -97,5 +97,5 @@ export default (props: CardProps) =>
       <Text>
         {props.children}
       </Text>
-    </Contetnt>
+    </Content>
   </Card>);
