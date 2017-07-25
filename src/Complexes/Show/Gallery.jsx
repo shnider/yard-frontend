@@ -111,7 +111,7 @@ class Gallery extends Component {
 
     return (
       <div>
-        <BodyClassName className="modal-gallery" >
+        <BodyClassName className="complex-modalGallery" >
           <BackgroundGallery onClick={this.props.closePortal}>
             <Wrapper>
               {images.map((image, index) =>
