@@ -178,7 +178,7 @@ class Show extends Component {
             </Grid>
           </Offers>
           <Around />
-          <Location />
+          <Location location={location} />
         </div>
       </BodyClassName>
     );

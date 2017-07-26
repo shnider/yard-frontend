@@ -4,15 +4,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
+import MapBox from './MapBox';
+import type { LocationType } from '../types';
+
 const Wrapper = styled.div`
   margin-top: -10rem;
   padding-bottom: 4rem;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 19.125rem;
-  box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
 `;
 
 const Places = styled.div`
@@ -39,14 +36,16 @@ const Value = styled.dd`
   color: #a9afb6;
 `;
 
-const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+type Props = {
+  location: LocationType,
+};
 
-export default () =>
+export default ({ location }: Props) =>
   (<Grid>
     <Wrapper>
       <Row>
         <Col lg={6}>
-          <Image src={`${PUBLIC_URL}/images/map.png`} />
+          <MapBox location={location} />
         </Col>
         <Col lg={6}>
           <Places>
