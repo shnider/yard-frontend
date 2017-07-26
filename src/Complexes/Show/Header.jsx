@@ -5,14 +5,24 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import type { Children } from 'react';
 
+import { media } from './../../utilities';
+
 const Header = styled.div`
-  border-top: 1px solid #eaebf0;
+  margin: 0 1rem;
+
+  ${media.desktop`
+    margin: 0;
+  `}
 `;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+
+  ${media.desktop`
+    margin-top: 1.5rem;
+  `}
 `;
 
 const Info = styled.div`
@@ -22,9 +32,13 @@ const Info = styled.div`
 const Title = styled.h1`
   margin: 0;
   font-family: 'Philosopher';
-  font-size: 2rem;
+  font-size: 1.625rem;
   color: #3e4247;
   line-height: 2.25rem;
+
+  ${media.desktop`
+    font-size: 2rem;
+  `}
 `;
 
 const Location = styled.p`
@@ -36,7 +50,11 @@ const Location = styled.p`
 `;
 
 const ButtonWrapper = styled.div`
+  display: none;
 
+  ${media.desktop`
+    display: block;
+  `}
 `;
 
 const Button = styled.button`

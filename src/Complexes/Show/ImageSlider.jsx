@@ -6,15 +6,18 @@ import { Grid } from 'react-flexbox-grid';
 import Portal from 'react-portal';
 
 import Gallery from './Gallery';
-import { getImageURL } from './../../utilities';
+import { getImageURL, media } from './../../utilities';
 import Pluralize from './../Pluralize';
 
 const Images = styled.div`
   display: flex;
   position: relative;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow-y: scroll;
 
+  ${media.desktop`
+    overflow-y: hidden;
+  `}
 `;
 
 const Image = styled.img`
@@ -29,7 +32,11 @@ const Image = styled.img`
 
 const ButtonWrapper = styled.div`
   position: absolute;
-  margin-top: -3rem;
+  margin: -3rem 1rem 0 1rem;
+
+  ${media.desktop`
+    margin: -3rem 0 0 0;
+  `}
 
 `;
 
