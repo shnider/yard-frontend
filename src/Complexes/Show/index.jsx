@@ -52,12 +52,18 @@ const Qualities = styled.section`
 `;
 
 const Infrastructure = styled.section`
+  margin: 0 1rem;
   padding-bottom: 3.5rem;
 `;
 
 const Offers = styled.section`
   background-color: #f4f5f9;
-  padding-bottom: 4rem;
+  width: 1232px;
+  padding-bottom: 2rem;
+
+  ${media.desktop`
+    margin-bottom: 4rem;
+  `}
 `;
 
 
@@ -157,52 +163,52 @@ class Show extends Component {
             <Heading>Инфраструктура</Heading>
             <Infrastructure>
               <Row>
-                <Col lg={2}>
+                <Col xs lg={2}>
                   <InfrastructureName>Бассейн</InfrastructureName>
                 </Col>
-                <Col lg={2}>
+                <Col xs lg={2}>
                   <InfrastructureName>Детский сад</InfrastructureName>
                 </Col>
-                <Col lg={2}>
+                <Col xs lg={2}>
                   <InfrastructureName>Частная школа</InfrastructureName>
                 </Col>
-                <Col lg={2}>
+                <Col xs lg={2}>
                   <InfrastructureName>Бассейн</InfrastructureName>
                 </Col>
-                <Col lg={2}>
+                <Col xs lg={2}>
                   <InfrastructureName>Детский сад</InfrastructureName>
                 </Col>
-                <Col lg={2}>
+                <Col xs lg={2}>
                   <InfrastructureName>Частная школа</InfrastructureName>
                 </Col>
-                <Col lg={2}>
+                <Col xs lg={2}>
                   <InfrastructureName>Частная школа</InfrastructureName>
                 </Col>
-                <Col lg={2}>
+                <Col xs lg={2}>
                   <InfrastructureName>Частная школа</InfrastructureName>
                 </Col>
-                <Col lg={2}>
+                <Col xs lg={2}>
                   <InfrastructureName>Частная школа</InfrastructureName>
                 </Col>
               </Row>
             </Infrastructure>
           </Grid>
-          <Offers>
-            <OfferHeading>{name}</OfferHeading>
-            <Grid>
+          <OfferHeading>{name}</OfferHeading>
+          <ScrollWrapper>
+            <Offers>
               <Row>
-                <Col lg={4}>
+                <Col xs={4} >
                   <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 20.4 }} />
                 </Col>
-                <Col lg={4}>
+                <Col xs={4}>
                   <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
                 </Col>
-                <Col lg={4}>
+                <Col xs={4}>
                   <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
                 </Col>
               </Row>
-            </Grid>
-          </Offers>
+            </Offers>
+          </ScrollWrapper>
           <Around />
           <Location location={location} />
         </div>

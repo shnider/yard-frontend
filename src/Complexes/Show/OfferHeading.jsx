@@ -13,6 +13,7 @@ const Heading = styled.h2`
   font-size: 1.5rem;
   font-weight: 700;
   line-height: ;
+  background-color: #f4f5f9;
   color: #3e4247;
 `;
 

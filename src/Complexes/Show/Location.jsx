@@ -44,10 +44,10 @@ export default ({ location }: Props) =>
   (<Grid>
     <Wrapper>
       <Row>
-        <Col lg={6}>
+        <Col xs={12} lg={6}>
           <MapBox location={location} />
         </Col>
-        <Col lg={6}>
+        <Col xs={12} lg={6}>
           <Places>
             <Place>
               <Name>Красный октябрь</Name>

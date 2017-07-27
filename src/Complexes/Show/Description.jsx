@@ -9,12 +9,16 @@ const Section = styled.section`border-bottom: 1px solid #eaebf0;`;
 
 const Article = styled.article`
   position: relative;
-  max-height: 350px;
+  max-height: 20rem;
   line-height: 1.5625rem;
   color: #3e4247;
   margin: 0 1rem;
   text-overflow: clip;
   overflow: hidden;
+
+  ${media.tablet`
+    max-height: none;
+  `}
 `;
 
 const Paragraph = styled.p`
@@ -90,7 +94,7 @@ class Description extends Component {
             свежим воздухом во время рабочего перерыва.
           </Paragraph>
           {!this.state.isOpened && <ButtonWrapper>
-            <Button onClick={this.showFullDescription}>Описание</Button>
+            <Button onClick={this.showFullDescription}>Прочитать описание</Button>
           </ButtonWrapper>}
         </Article>
       </Section>);

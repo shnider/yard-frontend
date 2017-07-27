@@ -4,6 +4,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
+import { media } from './../../utilities';
+
 const Section = styled.section`
   padding-bottom: 13.625rem;
   background-color: #3e4247;
@@ -35,8 +37,14 @@ const Link = styled.a`
 
 const Image = styled.img`
   width: 100%;
-  height: 35rem;
-  margin-top: 4rem;
+  height: 307px;
+  margin-top: 2rem;
+  object-fit: cover;
+
+  ${media.desktop`
+    margin-top: 4rem;
+    height: 35rem;
+  `}
 `;
 
 const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
@@ -45,12 +53,12 @@ export default () =>
   (<Section>
     <Grid>
       <Row>
-        <Col lg={6}>
+        <Col xs={12} lg={6}>
           <Subtitle>Якиманка</Subtitle>
           <Heading>Исторический центр Москвы в двух<br /> километрах от Кремля</Heading>
           <Link href="#">Гид по Якиманке →</Link>
         </Col>
-        <Col lg={6}>
+        <Col xs={12} lg={6}>
           <Image src={`${PUBLIC_URL}/images/polyanka.png`} />
         </Col>
       </Row>
