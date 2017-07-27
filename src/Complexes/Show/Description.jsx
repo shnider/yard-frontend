@@ -60,7 +60,7 @@ class Description extends Component {
   render() {
     return (
       <Section>
-        <Article style={this.state.isOpened ? 'max-height: none;' : {}} >
+        <Article style={this.state.isOpened ? { maxHeight: 'none' } : {}} >
           <Paragraph>
             ВТБ Арена Парк — современный квартал в 10 минутах езды от Кремля.
             Территория разделена на три зоны: жилой район, центральный стадион
