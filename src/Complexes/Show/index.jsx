@@ -125,19 +125,19 @@ class Show extends Component {
             <ScrollWrapper>
               <Qualities>
                 <Row>
-                  <Col xs={4}>
+                  <Col xs={4} >
                     {propertiesCount && <QualitiesRecord label="Количество квартир" value={propertiesCount} />}
                     {propertyKind && <QualitiesRecord label="Статус" value={kinds[propertyKind]} />}
                     {price.from && <QualitiesRecord label="Цены" value={formatPrice(from.rub, to.rub)} />}
                     {security && <QualitiesRecord label="Безопасность" value={securityKinds[security]} />}
                   </Col>
-                  <Col xs={4}>
+                  <Col xs={4} >
                     {constructionKind && <QualitiesRecord label="Конструкция корпусов" value={constructionKinds[constructionKind]} />}
                     {totalPrimaryArea.from && <QualitiesRecord label="Площадь" value={formatSquare(totalPrimaryArea.from, totalPrimaryArea.to)} />}
                     {ceilHeight.from && <QualitiesRecord label="Высота потолков" value={fromatCeilHeight(ceilHeight.from, ceilHeight.to)} />}
                     {maintenanceCosts && <QualitiesRecord label="Обслуживание" value={`${maintenanceCosts} руб / м² / месяц`} />}
                   </Col>
-                  <Col xs={4}>
+                  <Col xs={4} >
                     {security && <QualitiesRecord label="Начало строительства" value={`${quarters[startQuarter]} квартал ${startYear} года`} />}
                     {security && <QualitiesRecord label="Конец строительства" value={`${quarters[commissioningQuarter]} квартал ${commissioningYear} года`} />}
                     <QualitiesRecord label="Наземная парковка" value={formatParking(parkings)} />
@@ -146,7 +146,14 @@ class Show extends Component {
                 </Row>
               </Qualities>
             </ScrollWrapper>
-            <Description />
+            <Row>
+              <Col xs={12} lg={2}>
+                <Heading>Описание</Heading>
+              </Col>
+              <Col xs={12} lg={8}>
+                <Description />
+              </Col>
+            </Row>
             <Heading>Инфраструктура</Heading>
             <Infrastructure>
               <Row>
