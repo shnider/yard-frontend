@@ -26,19 +26,32 @@ const Summary = styled.div`
   border-bottom: 1px solid #eaebf0;
   margin: 0 1rem;
 
-  ${media.tablet`
+  ${media.desktop`
     display: flex;
     margin: 0;
   `}
 `;
 
+const ScrollWrapper = styled.div`
+  width: 100%;
+  overflow-x: scroll;
+
+  ${media.desktopLarge`
+    overflow-x: hidden;
+  `}
+`;
+
 const Qualities = styled.section`
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  box-sizing: border-box;
+  width: 1200px;
+  margin-bottom: 2rem;
+
+  ${media.desktop`
+    margin-bottom: 3rem;
+  `}
 `;
 
 const Infrastructure = styled.section`
-  margin-top: 2rem;
   padding-bottom: 3.5rem;
 `;
 
@@ -108,32 +121,34 @@ class Show extends Component {
               {architect && <SummaryRecord less="архитектор">{architect}</SummaryRecord>}
               <SummaryRecord less="застройщик">Группа «ПСН»</SummaryRecord>
             </Summary>
-            <Qualities>
-              <Heading>Характеристики</Heading>
-              <Row>
-                <Col xs={4}>
-                  {propertiesCount && <QualitiesRecord label="Количество квартир" value={propertiesCount} />}
-                  {propertyKind && <QualitiesRecord label="Статус" value={kinds[propertyKind]} />}
-                  {price.from && <QualitiesRecord label="Цены" value={formatPrice(from.rub, to.rub)} />}
-                  {security && <QualitiesRecord label="Безопасность" value={securityKinds[security]} />}
-                </Col>
-                <Col xs={4}>
-                  {constructionKind && <QualitiesRecord label="Конструкция корпусов" value={constructionKinds[constructionKind]} />}
-                  {totalPrimaryArea.from && <QualitiesRecord label="Площадь" value={formatSquare(totalPrimaryArea.from, totalPrimaryArea.to)} />}
-                  {ceilHeight.from && <QualitiesRecord label="Высота потолков" value={fromatCeilHeight(ceilHeight.from, ceilHeight.to)} />}
-                  {maintenanceCosts && <QualitiesRecord label="Обслуживание" value={`${maintenanceCosts} руб / м² / месяц`} />}
-                </Col>
-                <Col xs={4}>
-                  {security && <QualitiesRecord label="Начало строительства" value={`${quarters[startQuarter]} квартал ${startYear} года`} />}
-                  {security && <QualitiesRecord label="Конец строительства" value={`${quarters[commissioningQuarter]} квартал ${commissioningYear} года`} />}
-                  <QualitiesRecord label="Наземная парковка" value={formatParking(parkings)} />
-                  <QualitiesRecord label="Подземная парковка" value={formatParking(undergroundGarages)} />
-                </Col>
-              </Row>
-            </Qualities>
+            <Heading>Характеристики</Heading>
+            <ScrollWrapper>
+              <Qualities>
+                <Row>
+                  <Col xs={4}>
+                    {propertiesCount && <QualitiesRecord label="Количество квартир" value={propertiesCount} />}
+                    {propertyKind && <QualitiesRecord label="Статус" value={kinds[propertyKind]} />}
+                    {price.from && <QualitiesRecord label="Цены" value={formatPrice(from.rub, to.rub)} />}
+                    {security && <QualitiesRecord label="Безопасность" value={securityKinds[security]} />}
+                  </Col>
+                  <Col xs={4}>
+                    {constructionKind && <QualitiesRecord label="Конструкция корпусов" value={constructionKinds[constructionKind]} />}
+                    {totalPrimaryArea.from && <QualitiesRecord label="Площадь" value={formatSquare(totalPrimaryArea.from, totalPrimaryArea.to)} />}
+                    {ceilHeight.from && <QualitiesRecord label="Высота потолков" value={fromatCeilHeight(ceilHeight.from, ceilHeight.to)} />}
+                    {maintenanceCosts && <QualitiesRecord label="Обслуживание" value={`${maintenanceCosts} руб / м² / месяц`} />}
+                  </Col>
+                  <Col xs={4}>
+                    {security && <QualitiesRecord label="Начало строительства" value={`${quarters[startQuarter]} квартал ${startYear} года`} />}
+                    {security && <QualitiesRecord label="Конец строительства" value={`${quarters[commissioningQuarter]} квартал ${commissioningYear} года`} />}
+                    <QualitiesRecord label="Наземная парковка" value={formatParking(parkings)} />
+                    <QualitiesRecord label="Подземная парковка" value={formatParking(undergroundGarages)} />
+                  </Col>
+                </Row>
+              </Qualities>
+            </ScrollWrapper>
             <Description />
+            <Heading>Инфраструктура</Heading>
             <Infrastructure>
-              <Heading>Инфраструктура</Heading>
               <Row>
                 <Col lg={2}>
                   <InfrastructureName>Бассейн</InfrastructureName>
@@ -153,8 +168,6 @@ class Show extends Component {
                 <Col lg={2}>
                   <InfrastructureName>Частная школа</InfrastructureName>
                 </Col>
-              </Row>
-              <Row>
                 <Col lg={2}>
                   <InfrastructureName>Частная школа</InfrastructureName>
                 </Col>

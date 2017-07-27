@@ -5,7 +5,8 @@ import type { Children } from 'react';
 import { media } from './../../utilities';
 
 const Heading = styled.h2`
-  margin: 0 1rem 1rem 1rem;
+  margin: 0;
+  padding: 2rem 1rem 1rem 1rem;
   font-family: 'Philosopher';
   font-weight: bold;
   font-size: 1.5rem;
@@ -13,7 +14,7 @@ const Heading = styled.h2`
   line-height: 1.6875rem;
 
   ${media.desktop`
-    margin: 0 0 1rem 0;
+    padding: 2rem 0 1rem 0;
   `}
 `;
 
