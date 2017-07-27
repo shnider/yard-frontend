@@ -7,8 +7,7 @@ import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
 import type { LocationType } from '../types';
 
 const MapBox = ReactMapboxGl({
-  accessToken:
-  'pk.eyJ1IjoianVzdHVzZWJyYWluIiwiYSI6ImNpbHV1dWlmYTAwNmp2Zm02NjZkZmIybGkifQ.feSAgXjbU00mlAjBQyv1lQ',
+  accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
 });
 
 const containerStyle = {

@@ -13,10 +13,10 @@ const Images = styled.div`
   display: flex;
   position: relative;
   justify-content: flex-start;
-  overflow-y: scroll;
+  overflow-x: scroll;
 
   ${media.desktop`
-    overflow-y: hidden;
+    overflow-x: hidden;
   `}
 `;
 

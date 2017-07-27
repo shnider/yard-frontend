@@ -9,13 +9,13 @@ const Record = styled.dl`
 `;
 
 const Name = styled.dt`
-  width: 50%;
+  flex-basis: 50%;
   line-height: 1.375rem;
   color: #a9afb6;
 `;
 
 const Value = styled.dd`
-  width: 50%;
+  flex-basis: 50%;
   margin-left: 0;
   font-weight: 500;
   line-height: 1.375rem;

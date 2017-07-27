@@ -17,13 +17,19 @@ import Offer from './Offer';
 import Around from './Around';
 import Location from './Location';
 import { get } from './../../api';
-import { formatPrice, formatSquare, fromatCeilHeight, formatParking } from './../../utilities';
+import { formatPrice, formatSquare, fromatCeilHeight, formatParking, media } from './../../utilities';
 import type { ComplexType, LocationType } from '../types';
 import { kinds, securityKinds, constructionKinds, quarters } from '../dictionaries';
 
 const Summary = styled.div`
-  display: flex;
+  display: block;
   border-bottom: 1px solid #eaebf0;
+  margin: 0 1rem;
+
+  ${media.tablet`
+    display: flex;
+    margin: 0;
+  `}
 `;
 
 const Qualities = styled.section`
@@ -99,25 +105,25 @@ class Show extends Component {
           <Grid>
             <Summary>
               <SummaryRecord less="предложений">950</SummaryRecord>
-              <SummaryRecord less="архитектор">{architect}</SummaryRecord>
+              {architect && <SummaryRecord less="архитектор">{architect}</SummaryRecord>}
               <SummaryRecord less="застройщик">Группа «ПСН»</SummaryRecord>
             </Summary>
             <Qualities>
               <Heading>Характеристики</Heading>
               <Row>
-                <Col lg={4}>
+                <Col xs={4}>
                   {propertiesCount && <QualitiesRecord label="Количество квартир" value={propertiesCount} />}
                   {propertyKind && <QualitiesRecord label="Статус" value={kinds[propertyKind]} />}
-                  {price && <QualitiesRecord label="Цены" value={formatPrice(from.rub, to.rub)} />}
+                  {price.from && <QualitiesRecord label="Цены" value={formatPrice(from.rub, to.rub)} />}
                   {security && <QualitiesRecord label="Безопасность" value={securityKinds[security]} />}
                 </Col>
-                <Col lg={4}>
+                <Col xs={4}>
                   {constructionKind && <QualitiesRecord label="Конструкция корпусов" value={constructionKinds[constructionKind]} />}
-                  {totalPrimaryArea && <QualitiesRecord label="Площадь" value={formatSquare(totalPrimaryArea.from, totalPrimaryArea.to)} />}
-                  {totalPrimaryArea && <QualitiesRecord label="Высота потолков" value={fromatCeilHeight(ceilHeight.from, ceilHeight.to)} />}
-                  {ceilHeight && <QualitiesRecord label="Обслуживание" value={`${maintenanceCosts} руб / м² / месяц`} />}
+                  {totalPrimaryArea.from && <QualitiesRecord label="Площадь" value={formatSquare(totalPrimaryArea.from, totalPrimaryArea.to)} />}
+                  {ceilHeight.from && <QualitiesRecord label="Высота потолков" value={fromatCeilHeight(ceilHeight.from, ceilHeight.to)} />}
+                  {maintenanceCosts && <QualitiesRecord label="Обслуживание" value={`${maintenanceCosts} руб / м² / месяц`} />}
                 </Col>
-                <Col lg={4}>
+                <Col xs={4}>
                   {security && <QualitiesRecord label="Начало строительства" value={`${quarters[startQuarter]} квартал ${startYear} года`} />}
                   {security && <QualitiesRecord label="Конец строительства" value={`${quarters[commissioningQuarter]} квартал ${commissioningYear} года`} />}
                   <QualitiesRecord label="Наземная парковка" value={formatParking(parkings)} />

@@ -57,7 +57,7 @@ class List extends Component {
                   id={complex.id}
                   name={complex.name}
                   location={formatLocation(complex.location)}
-                  imgSrc={getImageURL(complex.image)}
+                  imgSrc={getImageURL(complex.images[0])}
                   imgAlt={`Фотография ${complex.name}`}
                 >
                   Something about complex

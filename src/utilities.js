@@ -7,7 +7,7 @@ export function getImageURL(image: ImageType, heightSize: number = 512): string 
   if (!image) {
     return 'http://via.placeholder.com/484x350';
   }
-  return `https://s3-eu-central-1.amazonaws.com/yard-images/${image.id}-${heightSize}`;
+  return `https://images.jqestate.ru/${image.id}-jqestate-${heightSize}`;
 }
 
 export function formatPrice(from: number, to: number) {
