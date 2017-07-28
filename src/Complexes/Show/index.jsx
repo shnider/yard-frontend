@@ -58,11 +58,21 @@ const Infrastructure = styled.section`
 
 const Offers = styled.section`
   background-color: #f4f5f9;
-  width: 1232px;
   padding-bottom: 2rem;
 
   ${media.desktop`
-    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+  `}
+`;
+
+const OffersFixWidth = styled.div`
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 1216px;
+
+ ${media.desktop`
+    padding: 0;
   `}
 `;
 
@@ -152,14 +162,7 @@ class Show extends Component {
                 </Row>
               </Qualities>
             </ScrollWrapper>
-            <Row>
-              <Col xs={12} lg={2}>
-                <Heading>Описание</Heading>
-              </Col>
-              <Col xs={12} lg={8}>
-                <Description />
-              </Col>
-            </Row>
+            <Description />
             <Heading>Инфраструктура</Heading>
             <Infrastructure>
               <Row>
@@ -193,22 +196,26 @@ class Show extends Component {
               </Row>
             </Infrastructure>
           </Grid>
-          <OfferHeading>{name}</OfferHeading>
-          <ScrollWrapper>
-            <Offers>
-              <Row>
-                <Col xs={4} >
-                  <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 20.4 }} />
-                </Col>
-                <Col xs={4}>
-                  <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
-                </Col>
-                <Col xs={4}>
-                  <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
-                </Col>
-              </Row>
-            </Offers>
-          </ScrollWrapper>
+          <Offers>
+            <OfferHeading>{name}</OfferHeading>
+            <ScrollWrapper>
+              <OffersFixWidth>
+                <Grid>
+                  <Row>
+                    <Col xs={4} >
+                      <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 20.4 }} />
+                    </Col>
+                    <Col xs={4}>
+                      <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
+                    </Col>
+                    <Col xs={4}>
+                      <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
+                    </Col>
+                  </Row>
+                </Grid>
+              </OffersFixWidth>
+            </ScrollWrapper>
+          </Offers>
           <Around />
           <Location location={location} />
         </div>
