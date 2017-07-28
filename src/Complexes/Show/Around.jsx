@@ -40,7 +40,7 @@ const Heading = styled.h1`
   line-height: 2.75rem;
   color: #fff;
 
-  ${media.desktop`
+  ${media.desktopLarge`
     margin: 3rem 0;
     font-size: 3rem;
     line-height: 3.75rem;
@@ -58,8 +58,11 @@ const Image = styled.img`
   object-fit: cover;
 
   ${media.tablet`
-    margin-top: 4rem;
     height: auto;
+  `}
+
+  ${media.desktop`
+    margin-top: 4rem;
   `}
 
   ${media.desktopLarge`

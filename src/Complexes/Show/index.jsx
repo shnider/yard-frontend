@@ -200,19 +200,17 @@ class Show extends Component {
             <OfferHeading>{name}</OfferHeading>
             <ScrollWrapper>
               <OffersFixWidth>
-
-                  <Row>
-                    <Col xs={4} >
-                      <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 20.4 }} />
-                    </Col>
-                    <Col xs={4}>
-                      <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
-                    </Col>
-                    <Col xs={4}>
-                      <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
-                    </Col>
-                  </Row>
-
+                <Row>
+                  <Col xs={4} >
+                    <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 20.4 }} />
+                  </Col>
+                  <Col xs={4}>
+                    <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
+                  </Col>
+                  <Col xs={4}>
+                    <Offer square={{ min: 59, max: 120 }} price={{ min: 20.3, max: 82.4 }} />
+                  </Col>
+                </Row>
               </OffersFixWidth>
             </ScrollWrapper>
           </Offers>

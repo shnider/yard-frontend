@@ -5,14 +5,21 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import MapBox from './MapBox';
+import { media } from './../../utilities';
 import type { LocationType } from '../types';
 
 const Wrapper = styled.div`
-  margin-top: -10rem;
-  padding-bottom: 4rem;
+  margin: 0;
+
+  ${media.desktop`
+    margin-top: -10rem;
+    padding-bottom: 4rem;
+  `}
 `;
 
 const Places = styled.div`
+  display: flex;
+  flex-flow: column;
   background-color: #fff;
   box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
 `;
@@ -44,10 +51,10 @@ export default ({ location }: Props) =>
   (<Grid>
     <Wrapper>
       <Row>
-        <Col xs={12} lg={6}>
+        <Col xs={12} sm={6}>
           <MapBox location={location} />
         </Col>
-        <Col xs={12} lg={6}>
+        <Col xs={12} sm={6}>
           <Places>
             <Place>
               <Name>Красный октябрь</Name>
