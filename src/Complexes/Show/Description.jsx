@@ -6,18 +6,21 @@ import { Row, Col } from 'react-flexbox-grid';
 
 import { media } from './../../utilities';
 
-const Section = styled.section`border-bottom: solid 1px #e0e0e1;`;
+const Section = styled.section`
+  margin: 0 1rem;
+  border-bottom: solid 1px #e0e0e1
+;`;
 
 const Heading = styled.h2`
   margin: 0;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 0 1rem 0;
   font-family: 'Philosopher';
   font-weight: bold;
   font-size: 1.5rem;
   color: #3e4247;
   line-height: 1.6875rem;
 
-  ${media.desktop`
+  ${media.desktopLarge`
     padding: 0;
   `}
 `;
@@ -27,7 +30,6 @@ const Article = styled.article`
   max-height: 20rem;
   line-height: 1.5625rem;
   color: #3e4247;
-  margin: 0 1rem;
   text-overflow: clip;
   overflow: hidden;
 
@@ -119,8 +121,7 @@ class Description extends Component {
             </Article>
           </Col>
         </Row>
-      </Section>
-      );
+      </Section>);
   }
 }
 

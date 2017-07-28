@@ -11,26 +11,43 @@ const Section = styled.section`
   background-color: #3e4247;
 `;
 
+const Wrapper = styled.div`
+  margin: 0 1rem;
+
+  ${media.tablet`
+    margin: 0;
+  `}
+`;
+
 const Subtitle = styled.p`
-  margin-top: 11.3125rem;
+  margin-top: 4rem;
   font-family: 'Philosopher';
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.6875rem;
   color: #a9afb6;
+
+  ${media.desktop`
+    margin-top: 11rem;
+  `}
 `;
 
 const Heading = styled.h1`
-  margin-top: 3rem;
+  margin: 2rem 0;
   font-family: 'Philosopher';
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
-  line-height: 3.75rem;
+  line-height: 2.75rem;
   color: #fff;
+
+  ${media.desktop`
+    margin: 3rem 0;
+    font-size: 3rem;
+    line-height: 3.75rem;
+  `}
 `;
 
 const Link = styled.a`
-  margin-top: 3rem;
   text-decoration: none;
   color: #00779a;
 `;
@@ -38,11 +55,14 @@ const Link = styled.a`
 const Image = styled.img`
   width: 100%;
   height: 307px;
-  margin-top: 2rem;
   object-fit: cover;
 
-  ${media.desktop`
+  ${media.tablet`
     margin-top: 4rem;
+    height: auto;
+  `}
+
+  ${media.desktopLarge`
     height: 35rem;
   `}
 `;
@@ -53,12 +73,14 @@ export default () =>
   (<Section>
     <Grid>
       <Row>
-        <Col xs={12} lg={6}>
-          <Subtitle>Якиманка</Subtitle>
-          <Heading>Исторический центр Москвы в двух<br /> километрах от Кремля</Heading>
-          <Link href="#">Гид по Якиманке →</Link>
+        <Col xs={12} sm={6} first="sm" last="xs">
+          <Wrapper>
+            <Subtitle>Якиманка</Subtitle>
+            <Heading>Исторический центр Москвы в двух<br /> километрах от Кремля</Heading>
+            <Link href="#">Гид по Якиманке →</Link>
+          </Wrapper>
         </Col>
-        <Col xs={12} lg={6}>
+        <Col xs={12} sm={6}>
           <Image src={`${PUBLIC_URL}/images/polyanka.png`} />
         </Col>
       </Row>
