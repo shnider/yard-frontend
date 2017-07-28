@@ -7,8 +7,12 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { media } from './../../utilities';
 
 const Section = styled.section`
-  padding-bottom: 13.625rem;
+  padding-bottom: 3rem;
   background-color: #3e4247;
+
+  ${media.desktop`
+    padding-bottom: 13.625rem;
+  `}
 `;
 
 const Wrapper = styled.div`
