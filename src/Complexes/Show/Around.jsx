@@ -16,7 +16,7 @@ const Section = styled.section`
 `;
 
 const Wrapper = styled.div`
-  margin: 0 1rem;
+  margin: 0 .5rem;
 
   ${media.tablet`
     margin: 0;
@@ -57,10 +57,9 @@ const Link = styled.a`
 `;
 
 const Image = styled.img`
-  width: 100%;
-  object-fit: cover;
-  margin-left: -1rem;
-  margin-right: -1rem;
+  margin-left: -0.5rem;
+  width: 104%;
+  height: auto;
 
   ${media.tablet`
     height: auto;
@@ -88,7 +87,7 @@ export default () =>
             <Link href="#">Гид по Якиманке →</Link>
           </Wrapper>
         </Col>
-        <Col xs={12} sm={6}>
+        <Col xs={12} sm={6} first="xs">
           <Image src={`${PUBLIC_URL}/images/polyanka.png`} />
         </Col>
       </Row>

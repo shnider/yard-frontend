@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 export default ({ latitude = 55.75222, longitude = 37.61556 }: LocationType) => (
   <Wrapper>
     <MapBox
-      zoom={[14]}
+      zoom={[12]}
       center={[longitude, latitude]}
       style="mapbox://styles/mapbox/light-v9"
       containerStyle={containerStyle}

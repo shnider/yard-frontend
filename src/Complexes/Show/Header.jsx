@@ -8,7 +8,7 @@ import type { Children } from 'react';
 import { media } from './../../utilities';
 
 const Header = styled.div`
-  margin: 0 1rem;
+  margin: 0 .5rem;
 
   ${media.desktop`
     margin: 0;

@@ -24,7 +24,7 @@ import { kinds, securityKinds, constructionKinds, quarters } from '../dictionari
 const Summary = styled.div`
   display: block;
   border-bottom: 1px solid #eaebf0;
-  margin: 0 1rem;
+  margin: 0 .5rem;
 
   ${media.desktop`
     display: flex;
@@ -42,7 +42,7 @@ const ScrollWrapper = styled.div`
 `;
 
 const Qualities = styled.section`
-  margin-left: 1rem;
+  margin-left: .5rem;
   box-sizing: border-box;
   width: 1200px;
 
@@ -53,7 +53,7 @@ const Qualities = styled.section`
 `;
 
 const Infrastructure = styled.section`
-  margin: 0 1rem;
+  margin: 0 .5rem;
   padding-bottom: 3.5rem;
 `;
 

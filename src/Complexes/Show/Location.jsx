@@ -23,7 +23,7 @@ const Places = styled.div`
 `;
 
 const Place = styled.dl`
-  padding: 1.5rem 1.5rem 1.5625rem 1.5rem;
+  padding: 1.5rem 0.5rem 1.5625rem 0.5rem;
   margin: 0;
   border-bottom: 1px solid #eaebf0;
 `;
@@ -48,7 +48,7 @@ type Props = {
 export default ({ location }: Props) =>
   (<Wrapper>
     <Grid>
-      <Row fluid>
+      <Row>
         <Col xs={12} sm={6}>
           <MapBox location={location} />
         </Col>

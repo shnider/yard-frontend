@@ -21,7 +21,7 @@ const Cards = styled.section`
 `;
 
 const Wrapper = styled.div`
-  margin: 0 1rem;
+  margin: 0 .5rem;
   ${media.desktop`
     margin: 0;
   `}
@@ -55,7 +55,7 @@ class List extends Component {
               {this.state.items.map(complex =>
                 (<Card
                   id={complex.id}
-                  key={complex.slug}
+                  key={complex.id}
                   name={complex.name}
                   location={formatLocation(complex.location)}
                   imgSrc={getImageURL(complex.images[0])}

@@ -6,7 +6,7 @@ import { media } from './../../utilities';
 
 const Heading = styled.h2`
   margin: 0;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 1rem .5rem;
   font-family: 'Philosopher';
   font-weight: bold;
   font-size: 1.5rem;

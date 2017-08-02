@@ -7,7 +7,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import { media } from './../../utilities';
 
 const Section = styled.section`
-  margin: 0 1rem;
+  margin: 0 .5rem;
   border-bottom: solid 1px #e0e0e1;
 
   ${media.desktop`

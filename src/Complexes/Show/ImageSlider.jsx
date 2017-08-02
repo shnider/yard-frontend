@@ -32,7 +32,7 @@ const Image = styled.img`
 
 const ButtonWrapper = styled.div`
   position: absolute;
-  margin: -3rem 1rem 0 1rem;
+  margin: -3rem 1rem 0 .5rem;
 
   ${media.desktop`
     margin: -3rem 0 0 0;

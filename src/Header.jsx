@@ -14,7 +14,7 @@ const Header = styled.header`
 `;
 
 const Wrapper = styled.div`
-  margin: 0 1rem;
+  margin: 0 .5rem;
   display: flex;
   justify-content: space-between;
 
