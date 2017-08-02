@@ -17,9 +17,12 @@ const containerStyle = {
 };
 
 const Wrapper = styled.div`
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
   height: 11rem;
 
   ${media.tablet`
+    margin: 0;
     height: 19rem;
   `}
 `;

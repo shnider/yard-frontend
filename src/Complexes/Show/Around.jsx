@@ -81,14 +81,14 @@ export default () =>
   (<Section>
     <Grid>
       <Row>
-        <Col>
+        <Col xs={12} sm={6}>
           <Wrapper>
             <Subtitle>Якиманка</Subtitle>
             <Heading>Исторический центр Москвы в двух<br /> километрах от Кремля</Heading>
             <Link href="#">Гид по Якиманке →</Link>
           </Wrapper>
         </Col>
-        <Col>
+        <Col xs={12} sm={6}>
           <Image src={`${PUBLIC_URL}/images/polyanka.png`} />
         </Col>
       </Row>
