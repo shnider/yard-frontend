@@ -8,8 +8,13 @@ import { media } from './../../utilities';
 
 const Section = styled.section`
   margin: 0 1rem;
-  border-bottom: solid 1px #e0e0e1
-;`;
+  border-bottom: solid 1px #e0e0e1;
+
+  ${media.desktop`
+    margin: 0;
+  `}
+
+`;
 
 const Heading = styled.h2`
   margin: 0;
@@ -20,7 +25,7 @@ const Heading = styled.h2`
   color: #3e4247;
   line-height: 1.6875rem;
 
-  ${media.desktopLarge`
+  ${media.desktop`
     padding: 0;
   `}
 `;

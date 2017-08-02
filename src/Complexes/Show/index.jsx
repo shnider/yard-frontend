@@ -42,11 +42,12 @@ const ScrollWrapper = styled.div`
 `;
 
 const Qualities = styled.section`
+  margin-left: 1rem;
   box-sizing: border-box;
   width: 1200px;
-  margin-bottom: 2rem;
 
   ${media.desktop`
+    margin-left: 0rem;
     margin-bottom: 3rem;
   `}
 `;

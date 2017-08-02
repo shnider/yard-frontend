@@ -22,3 +22,29 @@ body {
 .complex-modalGallery {
   overflow: hidden;
 }
+
+/* --- fix horizontal scroll on xs and sm (flexboxgrid bug) --- */
+.container-custom {
+  max-width: 1216px;
+  margin: 0 auto;
+}
+
+.row-custom {
+  display: flex;
+  box-sizing: border-box;
+  padding-left: -1rem;
+  padding-right: -1rem;
+  flex-wrap: wrap;
+}
+
+.col-custom {
+  display: flex;
+  flex-basis: 100%;
+  box-sizing: border-box;
+  padding-left: 1rem; 
+  padding-right: 1rem;
+}
+
+.order-start {
+  order: 1;
+}

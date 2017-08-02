@@ -18,10 +18,8 @@ const Wrapper = styled.div`
 `;
 
 const Places = styled.div`
-  display: flex;
-  flex-flow: column;
+  display: block;
   background-color: #fff;
-  box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
 `;
 
 const Place = styled.dl`
@@ -48,9 +46,9 @@ type Props = {
 };
 
 export default ({ location }: Props) =>
-  (<Grid>
-    <Wrapper>
-      <Row>
+  (<Wrapper>
+    <Grid>
+      <Row fluid>
         <Col xs={12} sm={6}>
           <MapBox location={location} />
         </Col>
@@ -71,5 +69,5 @@ export default ({ location }: Props) =>
           </Places>
         </Col>
       </Row>
-    </Wrapper>
-  </Grid>);
+    </Grid>
+  </Wrapper>);

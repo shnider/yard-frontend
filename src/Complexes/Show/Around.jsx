@@ -58,8 +58,9 @@ const Link = styled.a`
 
 const Image = styled.img`
   width: 100%;
-  height: 307px;
   object-fit: cover;
+  margin-left: -1rem;
+  margin-right: -1rem;
 
   ${media.tablet`
     height: auto;
@@ -80,14 +81,14 @@ export default () =>
   (<Section>
     <Grid>
       <Row>
-        <Col xs={12} sm={6} first="sm" last="xs">
+        <Col>
           <Wrapper>
             <Subtitle>Якиманка</Subtitle>
             <Heading>Исторический центр Москвы в двух<br /> километрах от Кремля</Heading>
             <Link href="#">Гид по Якиманке →</Link>
           </Wrapper>
         </Col>
-        <Col xs={12} sm={6}>
+        <Col>
           <Image src={`${PUBLIC_URL}/images/polyanka.png`} />
         </Col>
       </Row>

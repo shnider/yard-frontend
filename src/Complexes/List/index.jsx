@@ -55,6 +55,7 @@ class List extends Component {
               {this.state.items.map(complex =>
                 (<Card
                   id={complex.id}
+                  key={complex.slug}
                   name={complex.name}
                   location={formatLocation(complex.location)}
                   imgSrc={getImageURL(complex.images[0])}

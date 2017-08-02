@@ -70,6 +70,7 @@ class ImageSlider extends Component {
         <Images>
           {images.map((image, index) =>
           (<Image
+            key={image.id}
             src={getImageURL(image)}
             alt="ImageShow"
             onClick={() => {
