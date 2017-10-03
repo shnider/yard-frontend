@@ -10,11 +10,21 @@ import CompassDevelopmentLogo from './CompassDevelopmentLogo';
 import Introduction from './Introduction';
 import Card from './Card';
 import { get } from './../../api';
-import { getImageURL } from './../../utilities';
+import { getImageURL, media } from './../../utilities';
 import type { ComplexType, LocationType } from '../types';
 
 const Cards = styled.section`
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
+   ${media.desktop`
+    margin-bottom: 6rem;
+  `}
+`;
+
+const Wrapper = styled.div`
+  margin: 0 .5rem;
+  ${media.desktop`
+    margin: 0;
+  `}
 `;
 
 function formatLocation(location: LocationType) {
@@ -37,7 +47,7 @@ class List extends Component {
   render() {
     return (
       <BodyClassName className="complexes">
-        <div>
+        <Wrapper>
           <CompassDevelopmentLogo />
           <Introduction />
           <Cards>
@@ -45,9 +55,10 @@ class List extends Component {
               {this.state.items.map(complex =>
                 (<Card
                   id={complex.id}
+                  key={complex.id}
                   name={complex.name}
                   location={formatLocation(complex.location)}
-                  imgSrc={getImageURL(complex.image)}
+                  imgSrc={getImageURL(complex.images[0])}
                   imgAlt={`Фотография ${complex.name}`}
                 >
                   Something about complex
@@ -55,7 +66,7 @@ class List extends Component {
               )}
             </Grid>
           </Cards>
-        </div>
+        </Wrapper>
       </BodyClassName>
     );
   }

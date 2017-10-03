@@ -1,27 +1,43 @@
 // @flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
-import { getImageURL } from './../../utilities';
-import type { ImageType } from './../types';
+import Portal from 'react-portal';
+
+import Gallery from './Gallery';
+import { getImageURL, media } from './../../utilities';
 import Pluralize from './../Pluralize';
 
 const Images = styled.div`
   display: flex;
   position: relative;
   justify-content: flex-start;
-  overflow: auto;
+  overflow-x: scroll;
+
+  ${media.desktop`
+    overflow-x: hidden;
+  `}
 `;
 
 const Image = styled.img`
   height: 25rem;
+  transition: all 0.4s linear;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.85;
+  }
 `;
 
 const ButtonWrapper = styled.div`
-  z-index: 1;
   position: absolute;
-  margin-top: -3rem;
+  margin: -3rem 1rem 0 .5rem;
+
+  ${media.desktop`
+    margin: -3rem 0 0 0;
+  `}
+
 `;
 
 const Button = styled.button`
@@ -36,19 +52,51 @@ const Button = styled.button`
   color: #fff;
 `;
 
-type Props = { images: Array<ImageType> };
+class ImageSlider extends Component {
+  state = {};
 
-export default ({ images }: Props) =>
-  (<div>
-    <Images>
-      {images.map(image => (<Image src={getImageURL(image)} alt="ImageShow" />))}
-    </Images>
-    <Grid>
-      <ButtonWrapper>
-        <Button>
-          <span>{`${images.length} `}</span>
-          <Pluralize one="фотография" few="фотографии" other="фотографий" amount={images.length} />
-        </Button>
-      </ButtonWrapper>
-    </Grid>
-  </div>);
+  openGallery(index: number) {
+    this.setState({
+      isOpened: true,
+      indexOnClick: index,
+    });
+  }
+
+  render() {
+    const { images = {} } = this.props;
+
+    return (
+      <div>
+        <Images>
+          {images.map((image, index) =>
+          (<Image
+            key={image.id}
+            src={getImageURL(image)}
+            alt="ImageShow"
+            onClick={() => {
+              this.openGallery(index);
+            }}
+          />
+          ))}
+        </Images>
+        <Grid>
+          <ButtonWrapper>
+            <Button
+              onClick={() => { this.openGallery(0); }}
+            >
+              <span>{`${images.length} `}</span>
+              <Pluralize one="фотография" few="фотографии" other="фотографий" amount={images.length} />
+            </Button>
+          </ButtonWrapper>
+          <Portal
+            closeOnEsc
+            isOpened={this.state.isOpened}
+          >
+            <Gallery index={this.state.indexOnClick}>{images}</Gallery>
+          </Portal>
+        </Grid>
+      </div>);
+  }
+}
+
+export default ImageSlider;

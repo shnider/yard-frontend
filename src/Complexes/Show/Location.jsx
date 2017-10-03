@@ -4,24 +4,26 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const Wrapper = styled.div`
-  margin-top: -10rem;
-  padding-bottom: 4rem;
-`;
+import MapBox from './MapBox';
+import { media } from './../../utilities';
+import type { LocationType } from '../types';
 
-const Image = styled.img`
-  width: 100%;
-  height: 19.125rem;
-  box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
+const Wrapper = styled.div`
+  margin: 0;
+
+  ${media.desktop`
+    margin-top: -10rem;
+    padding-bottom: 4rem;
+  `}
 `;
 
 const Places = styled.div`
+  display: block;
   background-color: #fff;
-  box-shadow: 0 0 30px 0 rgba(0,0,0,.5);
 `;
 
 const Place = styled.dl`
-  padding: 1.5rem 1.5rem 1.5625rem 1.5rem;
+  padding: 1.5rem 0.5rem 1.5625rem 0.5rem;
   margin: 0;
   border-bottom: 1px solid #eaebf0;
 `;
@@ -39,16 +41,18 @@ const Value = styled.dd`
   color: #a9afb6;
 `;
 
-const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+type Props = {
+  location: LocationType,
+};
 
-export default () =>
-  (<Grid>
-    <Wrapper>
+export default ({ location }: Props) =>
+  (<Wrapper>
+    <Grid>
       <Row>
-        <Col lg={6}>
-          <Image src={`${PUBLIC_URL}/images/map.png`} />
+        <Col xs={12} sm={6}>
+          <MapBox location={location} />
         </Col>
-        <Col lg={6}>
+        <Col xs={12} sm={6}>
           <Places>
             <Place>
               <Name>Красный октябрь</Name>
@@ -65,5 +69,5 @@ export default () =>
           </Places>
         </Col>
       </Row>
-    </Wrapper>
-  </Grid>);
+    </Grid>
+  </Wrapper>);

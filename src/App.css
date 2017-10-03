@@ -18,3 +18,7 @@ body {
 .complex {
   background: #fff;
 }
+
+.complex-modalGallery {
+  overflow: hidden;
+}
