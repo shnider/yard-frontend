@@ -10,10 +10,11 @@ import { media } from './utilities';
 
 const Header = styled.header`
   background-color: #fff;
+  border-bottom: solid 1px #e0e0e1;
 `;
 
 const Wrapper = styled.div`
-  margin: 0 1rem;
+  margin: 0 .5rem;
   display: flex;
   justify-content: space-between;
 

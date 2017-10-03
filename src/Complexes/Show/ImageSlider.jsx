@@ -6,15 +6,18 @@ import { Grid } from 'react-flexbox-grid';
 import Portal from 'react-portal';
 
 import Gallery from './Gallery';
-import { getImageURL } from './../../utilities';
+import { getImageURL, media } from './../../utilities';
 import Pluralize from './../Pluralize';
 
 const Images = styled.div`
   display: flex;
   position: relative;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow-x: scroll;
 
+  ${media.desktop`
+    overflow-x: hidden;
+  `}
 `;
 
 const Image = styled.img`
@@ -29,7 +32,11 @@ const Image = styled.img`
 
 const ButtonWrapper = styled.div`
   position: absolute;
-  margin-top: -3rem;
+  margin: -3rem 1rem 0 .5rem;
+
+  ${media.desktop`
+    margin: -3rem 0 0 0;
+  `}
 
 `;
 
@@ -63,6 +70,7 @@ class ImageSlider extends Component {
         <Images>
           {images.map((image, index) =>
           (<Image
+            key={image.id}
             src={getImageURL(image)}
             alt="ImageShow"
             onClick={() => {

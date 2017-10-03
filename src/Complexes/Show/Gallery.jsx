@@ -38,7 +38,7 @@ const Wrapper = styled.div`
 
 const Image = styled.img`
   transition: all 0.3s;
-  transform-origin: center bottom;
+  transform-origin: bottom;
   max-height: 80vh;
   max-width: 80vw;
 `;
@@ -120,7 +120,7 @@ class Gallery extends Component {
             <Wrapper>
               {images.map((image, index) =>
                 (<Image
-                  src={getImageURL(image, 1024)}
+                  src={getImageURL(image, 512)}
                   alt={index}
                   style={getTransform(index, this.state.active)}
                   onClick={e => this.handlerCLick(e, index)}

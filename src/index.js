@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-filename-extension */
-// @flow
+
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css';
+import 'flexboxgrid2/dist/flexboxgrid.min.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
