@@ -10,10 +10,11 @@ script:
   - yarn lint
   - yarn flow
 
-deploy:
-  on:
-    branch: master
-  provider: script
-  script:
-    - yarn deploy
-  skip_cleanup: true
+# пока не разобрался, как токен авторизации Now на Travis прокинуть 
+#deploy:
+#  on:
+#    branch: master
+#  provider: script
+#  script:
+#    - yarn deploy
+#  skip_cleanup: true
