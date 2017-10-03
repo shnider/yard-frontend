@@ -1,8 +1,8 @@
-#Compass Develompent Demo [![Build Status](https://travis-ci.org/shnider/yard-frontend.svg?branch=master)](https://travis-ci.org/shnider/yard-frontend)
+# Compass Develompent Demo [![Build Status](https://travis-ci.org/shnider/yard-frontend.svg?branch=master)](https://travis-ci.org/shnider/yard-frontend)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-##Tech stack:
+## Tech stack:
 
 - [react-router](https://github.com/ReactTraining/react-router)
 - [styled-components](https://github.com/styled-components/styled-components)
@@ -13,7 +13,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [now](https://github.com/zeit/now-cli)
 - [Travis-CI](https://travis-ci.org/)
 
-##How to use: 
+## How to use: 
 
 Install dependencies:
 
