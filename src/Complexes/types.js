@@ -20,6 +20,21 @@ export type LocationType = {
   regionName?: string,
 };
 
+export type DetailsType = {
+  architect: string,
+  startYear: number,
+  startQuarter: string,
+  commissioningYear: number,
+  commissioningQuarter: string,
+  ceilHeight: Object,
+  parkings: number,
+  maintenanceCosts: number,
+  propertyKind: string,
+  security: string,
+  undergroundGarages: number,
+  constructionKind: string,
+};
+
 export type ComplexType = {
   commissioningYear?: number,
   adjacentTerritory: {
@@ -106,6 +121,8 @@ export type ComplexType = {
   id: string,
   updatedByUserId?: number,
   createdAt: string,
+  details: DetailsType,
+  image: ImageType,
   images: Array<ImageType>,
   accreditors: ?Array<number>,
 };
